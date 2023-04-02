@@ -4,6 +4,7 @@ import { AiOutlineStar } from "react-icons/ai";
 import { BsPerson } from "react-icons/bs";
 import CourseTag from "./Course_Tag/CourseTag";
 import CourseCategory from "./CourseCategory";
+import RelatedCourse from "./RelatedCourse";
 export default function CourseDetailHero() {
   return (
     <div className="bg-[#EEF0F4] sm:h-96 sm:py-10  flex flex-col justify-between">
@@ -15,7 +16,7 @@ export default function CourseDetailHero() {
       </div>
       <div className="mx-4 sm:mx-20 my-10  flex  justify-between  flex-col sm:flex-row">
         <div>
-          <p className="text-sm">Communications</p>
+          <p className="text-sm ">Communications</p>
           <h2 className="text-base sm:text-2xl sm:tracking-wide font-normal ">
             Successful Negotiation: Master Your Negotiating Skills
           </h2>
@@ -55,6 +56,7 @@ export default function CourseDetailHero() {
         <div className="relative flex flex-col">
           <CourseTag />
           <CourseCategory />
+          <RelatedCourse/>
         </div>
       </div>
     </div>

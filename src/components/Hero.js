@@ -21,10 +21,10 @@ export default function Hero() {
       <div className="w-full flex items-center flex-1 justify-center">
         <Image
           src="/pexels-cottonbro-studio-5083408.png"
-          width={500}
+          width={400}
           height={300}
           alt="pexels-cottonbro-studio-5083408.png"
-          className="  object-cover rounded-lg h-auto w-auto"
+          className="  object-cover rounded-lg"
         />
       </div>
     </div>

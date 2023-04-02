@@ -57,7 +57,7 @@ export default function Home() {
         />
       </div>
       <FeaturedHeader title="Loctech Partners " btnName="View all" />
-      <Partners />
+      {/* <Partners /> */}
       <NewsletterCard />
     </div>
   );
