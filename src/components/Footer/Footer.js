@@ -4,8 +4,8 @@ import FooterItem from "./FooterItem";
 export default function Footer() {
   return (
     <>
-      <div className=" sm:mx-20 sm:mt-8 sm:py-10 flex  flex-col sm:flex-row sm:justify-between sm:items-start">
-        <div className="flex flex-col sm:flex-1 sm:flex-col text-center sm:text-start">
+      <div className=" sm:mx-20 sm:mt-8 sm:py-10 flex flex-row sm:justify-between sm:items-start">
+        <div className="flex flex-col text-start sm:flex-1 sm:flex-col  sm:text-start">
           <Image
             src="/loctech PNG reg.png"
             width={100}
@@ -14,7 +14,7 @@ export default function Footer() {
           />
           <p className="text-base sm:mt-5">Call us</p>
           <p className="text-sm text-[#FF2883] ">+234 703 888 5466</p>
-          <p className="text-sm my-2 mx-10 sm:mx-0 ">
+          <p className="text-sm my-2 sm:mx-0 ">
             4a Etim Okpoyo Close, Beside Total Petrol Station, Aba Road PH.
           </p>
           <p className="text-sm font-light">customercare@loctechng.com</p>
