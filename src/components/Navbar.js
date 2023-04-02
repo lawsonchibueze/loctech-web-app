@@ -14,7 +14,7 @@ export default function Navbar() {
 
   return (
     <nav className="bg-white sm:flex  justify-center items-center sm:py-5">
-      <div className="max-w-full w-full  md:px-6 lg:px-8 ">
+      <div className="max-w-full w-full  md:px-6 ">
         <div className="relative flex items-center justify-between h-16">
           <div className="absolute inset-y-0 left-0 flex items-center md:hidden">
             <button
@@ -33,7 +33,12 @@ export default function Navbar() {
           <div className="flex-1 flex items-center justify-center md:px-10 md:items-stretch md:justify-between">
             <div className="flex-shrink-0 ">
               <Link href="/" className="text-white text-xl">
-                <Image src="/loctech PNG reg.png" width={120} height={120} alt='logo' />
+                <Image
+                  src="/loctech PNG reg.png"
+                  width={120}
+                  height={120}
+                  alt="logo"
+                />
               </Link>
             </div>
 
