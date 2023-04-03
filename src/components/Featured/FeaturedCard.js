@@ -1,16 +1,17 @@
 import React from "react";
 import Image from "next/image";
 export default function FeaturedCard({
-  level,
-  courseTitle,
-  author,
+  name,
+  image,
+  description,
   price,
-  img,
+  duration,
+  category,
 }) {
   return (
     <div className="h-76">
       <Image
-        src={img}
+        src={image}
         width={500}
         height={300}
         className=""
@@ -43,14 +44,14 @@ export default function FeaturedCard({
               : ""
           }`}
         >
-          {level}
+          {price}
         </p>
       </div>
       <div>
-        <p className="text-sm font-medium my-2">{courseTitle}</p>
+        <p className="text-sm font-medium my-2">{name}</p>
       </div>
       <div>
-        <p className="hover:text-amber-400 text-xs">{author}</p>
+        <p className="hover:text-amber-400 text-xs">{category}</p>
       </div>
       <div>
         <p className="font-bold">{price}</p>
