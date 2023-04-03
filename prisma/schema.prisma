@@ -1,0 +1,77 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Course {
+  id           String     @id
+  name         String
+  description  String
+  image        String
+  price        Float
+  video        String?
+  category     CATEGORY
+  duration     Int?
+  learningObj  String[]
+  targetAud    String[]
+  slug         String     @unique
+  isFeatured   Boolean    @default(false)
+  isOnline     Boolean    @default(false)
+  curriculum   String?
+  metaTitle    String?
+  metaDesc     String?
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime
+  published    Boolean    @default(false)
+  instructorId String
+  Instructor   Instructor @relation(fields: [instructorId], references: [id])
+}
+
+model Hero {
+  id        String   @id
+  title     String
+  subtitle  String
+  button    String
+  image     String
+  createdAt DateTime @default(now())
+  updatedAt DateTime
+}
+
+model Instructor {
+  id        String   @id
+  name      String?
+  email     String?  @unique
+  image     String?
+  bio       String?
+  rating    Float?
+  reviews   String?
+  facebook  String?
+  twitter   String?
+  instagram String?
+  linkedin  String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime
+  Course    Course[]
+}
+
+model Testimonial {
+  id        String   @id
+  name      String
+  image     String
+  review    String
+  createdAt DateTime @default(now())
+  updatedAt DateTime
+}
+
+enum CATEGORY {
+  DATA_SCIENCE
+  CODING
+  CLOUD_SECURITY
+  GRAPHICS
+  MANAGEMENT
+  NETWORKING
+}

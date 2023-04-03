@@ -10,13 +10,41 @@ import SubjectCard from "@/components/Subjects/SubjectCard";
 import Partners from "@/components/Partners";
 import NewsletterCard from "@/components/NewsletterCard";
 import Footer from "@/components/Footer/Footer";
+import { PrismaClient } from "@prisma/client";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home() {
+const prisma = new PrismaClient();
+
+const fetchCourse = async () => {
+  const courses = await prisma.course.findMany();
+  return courses;
+};
+
+const fetchHero = async () => {
+  const hero = await prisma.hero.findMany();
+  return hero;
+};
+
+export default async function Home() {
+  const courses = await fetchCourse();
+  const hero = await fetchHero();
+  console.log(courses);
+  console.log(hero);
   return (
     <div>
-      <Hero />
+      {hero.map((hero) => {
+        const { id, title, subtitle, image, button } = hero;
+        return (
+          <Hero
+            key={id}
+            title={title}
+            subtitle={subtitle}
+            image={image}
+            button={button}
+          />
+        );
+      })}
       <div className=" gap-4 mx-3 sm:grid sm:grid-cols-2 sm:gap-x-8 sm:mx-20 lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-2   py-4 ">
         <Card
           image="/black-woman-in-modern-office-speeking-on-phone-PHV96YW (1).png"
@@ -31,7 +59,7 @@ export default function Home() {
       </div>
       <FeaturedHeader title="Explore Featured Courses " categories />
       <div className=" gap-4 mx-3 sm:grid sm:grid-cols-2 sm:gap-x-8 sm:mx-20 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5   py-4 ">
-        <FeaturedItem />
+        <FeaturedItem courses={courses} />
       </div>
 
       <Timer />
