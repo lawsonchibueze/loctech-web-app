@@ -20,7 +20,7 @@ export default function Hero({ image, title, subtitle, button }) {
           width={400}
           height={300}
           alt="pexels-cottonbro-studio-5083408.png"
-          className="  object-cover rounded-lg"
+          className="  object-cover rounded-lg w-full"
           priority={true}
         />
       </div>
