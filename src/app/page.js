@@ -12,6 +12,7 @@ import NewsletterCard from "@/components/NewsletterCard";
 import Footer from "@/components/Footer/Footer";
 import { PrismaClient } from "@prisma/client";
 
+
 const inter = Inter({ subsets: ["latin"] });
 
 const prisma = new PrismaClient();
@@ -26,11 +27,12 @@ const fetchHero = async () => {
   return hero;
 };
 
-export default async function Home() {
+export default async function Home({searchParams}) {
+
   const courses = await fetchCourse();
   const hero = await fetchHero();
-  console.log(courses);
-  console.log(hero);
+  console.log("=====", searchParams);
+  // console.log('==========',hero);
   return (
     <div>
       {hero.map((hero) => {

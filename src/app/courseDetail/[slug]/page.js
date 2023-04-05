@@ -7,7 +7,8 @@ import InstructorCard from "@/components/InstructorCard";
 import RatingCard from "@/components/RatingCard";
 import Reviews from "@/components/Reviews";
 export default function page({ params }) {
-  //   const courseId = params.id;
+     const courseId = params.slug;
+     console.log(courseId)
   return (
     <div>
       <CourseDetailHero />
