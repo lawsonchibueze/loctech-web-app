@@ -8,31 +8,41 @@ datasource db {
 }
 
 model Course {
-  id           String     @id
-  name         String
-  description  String
-  image        String
-  price        Float
-  video        String?
-  category     CATEGORY
-  duration     Int?
-  learningObj  String[]
-  targetAud    String[]
-  slug         String     @unique
-  isFeatured   Boolean    @default(false)
-  isOnline     Boolean    @default(false)
-  curriculum   String?
-  metaTitle    String?
-  metaDesc     String?
-  createdAt    DateTime   @default(now())
-  updatedAt    DateTime
-  published    Boolean    @default(false)
-  instructorId String
-  Instructor   Instructor @relation(fields: [instructorId], references: [id])
+  id               String         @id @default(cuid())
+  name             String
+  description      String
+  image            String
+  price            Float
+  video            String?
+  category         CATEGORY
+  duration         Int?
+  learningObj      String[]
+  targetAud        String[]
+  slug             String         @unique
+  isFeatured       Boolean        @default(false)
+  isOnline         Boolean        @default(false)
+  isTrending       Boolean        @default(false)
+  curriculum       String?
+  metaTitle        String?
+  metaDesc         String?
+  createdAt        DateTime       @default(now())
+  updatedAt        DateTime
+  published        Boolean        @default(false)
+  instructorId     String
+  Instructor       Instructor     @relation(fields: [instructorId], references: [id])
+  relatedCoursesId String
+  RelatedCourses   RelatedCourses @relation(fields: [relatedCoursesId], references: [id])
+}
+
+model RelatedCourses {
+  id        String   @id @default(cuid())
+  course    Course[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime
 }
 
 model Hero {
-  id        String   @id
+  id        String   @id @default(cuid())
   title     String
   subtitle  String
   button    String
@@ -42,7 +52,7 @@ model Hero {
 }
 
 model Instructor {
-  id        String   @id
+  id        String   @id @default(cuid())
   name      String?
   email     String?  @unique
   image     String?
@@ -59,10 +69,18 @@ model Instructor {
 }
 
 model Testimonial {
-  id        String   @id
+  id        String   @id @default(cuid())
   name      String
   image     String
   review    String
+  createdAt DateTime @default(now())
+  updatedAt DateTime
+}
+
+model Partners {
+  id        String   @id @default(cuid())
+  name      String[]
+  image     String[]
   createdAt DateTime @default(now())
   updatedAt DateTime
 }
@@ -74,4 +92,31 @@ enum CATEGORY {
   GRAPHICS
   MANAGEMENT
   NETWORKING
+}
+
+model Post {
+  id        String    @id @default(cuid())
+  title     String
+  slug      String    @unique
+  content   String
+  image     String
+  createdAt DateTime  @default(now())
+  updatedAt DateTime
+  published Boolean   @default(false)
+  comments  Comment[]
+}
+
+model Comment {
+  id        String    @id @default(cuid())
+  name      String
+  email     String
+  comment   String
+  createdAt DateTime  @default(now())
+  updatedAt DateTime
+  published Boolean   @default(false)
+  postId    String
+  Post      Post      @relation(fields: [postId], references: [id])
+  commentId String?
+  Comment   Comment?  @relation("CommentToComment", fields: [commentId], references: [id])
+  replies   Comment[] @relation("CommentToComment")
 }
