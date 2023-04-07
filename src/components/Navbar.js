@@ -9,16 +9,34 @@ import { TbCategory } from "react-icons/tb";
 import NavItem from "./NavItem";
 import Image from "next/image";
 import Modal from "./Modal";
+import { MdOutlineClose } from "react-icons/md";
+import DarkMode from "./DarkMode/DarkMode";
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+
   const toggleMenu = () => setIsOpen(!isOpen);
+
+  const openModal = () => setShowModal(true);
+
+  const closeModal = () => setShowModal(false);
 
   return (
     <nav className="bg-white sm:flex  justify-center items-center sm:py-5">
-      <Modal >
-        <h1>Modal Title</h1>
-        <p>Modal content goes here.</p>
-      </Modal>
+      {showModal && (
+        <Modal isClose={closeModal}>
+          <div className="px-5  w-full flex justify-center flex-col items-center space-y-14 sm:space-y-60">
+            <input
+              placeholder="Hit enter to search..."
+              className=" w-full sm:px-5 bg-transparent outline-none border-b-4 text-white border-gray-600 text-2xl sm:text-6xl placeholder-gray-400"
+            />
+
+            <div>
+              <MdOutlineClose className=" text-5xl sm:text-7xl text-white  font-medium cursor-pointer" onClick={closeModal}/>
+            </div>
+          </div>
+        </Modal>
+      )}
 
       <div className="max-w-full w-full  md:px-6 ">
         <div className="relative flex items-center justify-between h-16">
@@ -53,22 +71,20 @@ export default function Navbar() {
               <p className="text-black">Category</p>
             </div>
 
-            <div className="relative w-96 hidden sm:flex items-center">
-              <input
-                type="text"
-                placeholder="Search..."
-                className="w-full py-2 pr-10 pl-4 border border-gray-400 rounded-lg shadow-md outline-none"
-              />
+           
+
+            <div className="hidden  md:ml-6 md:flex items-center">
+              <div className="flex space-x-4">
+              <div className="relative flex   sm:flex items-center">
+              <DarkMode/>
               <button
                 type="submit"
-                className="absolute top-0 right-0 h-full px-2 text-gray-500 hover:text-blue-500"
+                className="absolute top-0 right-0 h-full px-2 text-gray-500 hover:text-blue-500 cursor-pointer"
+                onClick={openModal}
               >
                 <HiOutlineSearch />
               </button>
             </div>
-
-            <div className="hidden  md:ml-6 md:flex items-center">
-              <div className="flex space-x-4">
                 <NavItem to="" name="Home" />
                 <NavItem to="" name="Courses" />
                 <NavItem to="" name="Blog" />
@@ -82,6 +98,15 @@ export default function Navbar() {
       {isOpen && (
         <div className="  sm:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1">
+          <div className="relative   sm:flex items-center">
+              <button
+                type="submit"
+                className=" px-2 text-gray-500 hover:text-blue-500 cursor-pointer"
+                onClick={openModal}
+              >
+                <HiOutlineSearch />
+              </button>
+            </div>
             <NavItem to="" name="Home" />
             <NavItem to="" name="Courses" />
             <NavItem to="" name="Blog" />
