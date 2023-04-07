@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 export default function NewsletterCard() {
   return (
-    <div className="bg-[#EEF0F4] text-center py-8 rounded-lg sm:mx-20 sm:text-start  sm:px-20  sm:flex sm:items-center justify-between">
+    <div className="dark:bg-gray-500 dark:text-white bg-[#EEF0F4] text-center py-8 rounded-lg sm:mx-20 sm:text-start  sm:px-20  sm:flex sm:items-center justify-between">
       <div>
         <p className="font-semibold text-base sm:text-lg">
           Achieve Your Goals With Loctech IT Training Institute
