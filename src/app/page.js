@@ -31,7 +31,7 @@ export default async function Home({searchParams}) {
 
   const courses = await fetchCourse();
   const hero = await fetchHero();
-  console.log("=====", searchParams);
+  console.log("=====", courses);
   // console.log('==========',hero);
   return (
     <div>

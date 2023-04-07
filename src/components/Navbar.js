@@ -8,12 +8,18 @@ import { HiOutlineSearch } from "react-icons/hi";
 import { TbCategory } from "react-icons/tb";
 import NavItem from "./NavItem";
 import Image from "next/image";
+import Modal from "./Modal";
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
     <nav className="bg-white sm:flex  justify-center items-center sm:py-5">
+      <Modal >
+        <h1>Modal Title</h1>
+        <p>Modal content goes here.</p>
+      </Modal>
+
       <div className="max-w-full w-full  md:px-6 ">
         <div className="relative flex items-center justify-between h-16">
           <div className="absolute inset-y-0 left-0 flex items-center md:hidden">
