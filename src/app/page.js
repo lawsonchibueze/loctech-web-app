@@ -18,13 +18,15 @@ const inter = Inter({ subsets: ["latin"] });
 const prisma = new PrismaClient();
 
 const fetchCourse = async () => {
-  const courses = await prisma.course.findMany();
-  return courses;
+  // const courses = await prisma.course.findMany();
+  // return courses;
+  return []
 };
 
 const fetchHero = async () => {
-  const hero = await prisma.hero.findMany();
-  return hero;
+  // const hero = await prisma.hero.findMany();
+  // return hero;
+  return []
 };
 
 export default async function Home({searchParams}) {

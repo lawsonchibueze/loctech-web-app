@@ -2,9 +2,9 @@ import React from "react";
 import Image from "next/image";
 export default function Card({ title, btnName, image }) {
   return (
-    <div className="flex w-full bg-[#EDEDED] p-5 rounded-lg my-4 items-center">
+    <div className="flex w-full dark:bg-gray-500 bg-[#EDEDED] dark:text-white p-5 rounded-lg my-4 items-center">
       <div>
-        <p className="text-[#0671DC]">New Certificates</p>
+        <p className="text-[#FF2883] font-bold">New Certificates</p>
 
         <h3 className="text-lg font-semibold sm:text-2xl mr-2	">{title}</h3>
 

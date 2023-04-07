@@ -22,7 +22,7 @@ export default function Navbar() {
   const closeModal = () => setShowModal(false);
 
   return (
-    <nav className="bg-white sm:flex  justify-center items-center sm:py-5">
+    <nav className=" dark:bg-gray-700 sm:flex  justify-center items-center sm:py-5">
       {showModal && (
         <Modal isClose={closeModal}>
           <div className="px-5  w-full flex justify-center flex-col items-center space-y-14 sm:space-y-60">
@@ -32,7 +32,10 @@ export default function Navbar() {
             />
 
             <div>
-              <MdOutlineClose className=" text-5xl sm:text-7xl text-white  font-medium cursor-pointer" onClick={closeModal}/>
+              <MdOutlineClose
+                className=" text-5xl sm:text-7xl text-white  font-medium cursor-pointer"
+                onClick={closeModal}
+              />
             </div>
           </div>
         </Modal>
@@ -67,24 +70,25 @@ export default function Navbar() {
             </div>
 
             <div className="items-center hidden sm:flex">
-              <TbCategory className="text-2xl mx-4 bg-white" />
-              <p className="text-black">Category</p>
+              <TbCategory className="text-2xl mx-4 " />
+              <p className="text-black dark:text-white">Category</p>
             </div>
-
-           
 
             <div className="hidden  md:ml-6 md:flex items-center">
               <div className="flex space-x-4">
-              <div className="relative flex   sm:flex items-center">
-              <DarkMode/>
-              <button
-                type="submit"
-                className="absolute top-0 right-0 h-full px-2 text-gray-500 hover:text-blue-500 cursor-pointer"
-                onClick={openModal}
-              >
-                <HiOutlineSearch />
-              </button>
-            </div>
+                <div className="relative flex   sm:flex items-center">
+                  <button
+                    type="submit"
+                    className="dark:text-white text-xl absolute top-0 right-0 h-full px-2 text-gray-500 dark:hover:text-[#FF2883]  hover:text-[#FF2883] cursor-pointer"
+                    onClick={openModal}
+                  >
+                    <HiOutlineSearch />
+                  </button>
+                </div>
+
+                <div className="flex items-center space-x-5">
+                  <DarkMode />
+                </div>
                 <NavItem to="" name="Home" />
                 <NavItem to="" name="Courses" />
                 <NavItem to="" name="Blog" />
@@ -98,7 +102,7 @@ export default function Navbar() {
       {isOpen && (
         <div className="  sm:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1">
-          <div className="relative   sm:flex items-center">
+            <div className="relative   sm:flex items-center">
               <button
                 type="submit"
                 className=" px-2 text-gray-500 hover:text-blue-500 cursor-pointer"
