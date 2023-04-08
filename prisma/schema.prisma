@@ -1,15 +1,17 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
 generator client {
   provider = "prisma-client-js"
 }
 
 datasource db {
-  provider = "postgresql"
+  provider = "mongodb"
   url      = env("DATABASE_URL")
 }
 
 model Course {
-  id               String         @id @default(cuid())
-  name             String
+  id               String         @id @default(auto()) @map("_id") @db.ObjectId
   description      String
   image            String
   price            Float
@@ -28,21 +30,21 @@ model Course {
   createdAt        DateTime       @default(now())
   updatedAt        DateTime
   published        Boolean        @default(false)
-  instructorId     String
+  instructorId     String         @db.ObjectId
   Instructor       Instructor     @relation(fields: [instructorId], references: [id])
-  relatedCoursesId String
+  relatedCoursesId String         @db.ObjectId
   RelatedCourses   RelatedCourses @relation(fields: [relatedCoursesId], references: [id])
 }
 
 model RelatedCourses {
-  id        String   @id @default(cuid())
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
   course    Course[]
   createdAt DateTime @default(now())
   updatedAt DateTime
 }
 
 model Hero {
-  id        String   @id @default(cuid())
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
   title     String
   subtitle  String
   button    String
@@ -52,7 +54,7 @@ model Hero {
 }
 
 model Instructor {
-  id        String   @id @default(cuid())
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
   name      String?
   email     String?  @unique
   image     String?
@@ -69,7 +71,7 @@ model Instructor {
 }
 
 model Testimonial {
-  id        String   @id @default(cuid())
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
   name      String
   image     String
   review    String
@@ -78,7 +80,7 @@ model Testimonial {
 }
 
 model Partners {
-  id        String   @id @default(cuid())
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
   name      String[]
   image     String[]
   createdAt DateTime @default(now())
@@ -95,28 +97,20 @@ enum CATEGORY {
 }
 
 model Post {
-  id        String    @id @default(cuid())
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
   title     String
-  slug      String    @unique
-  content   String
+  subtitle  String
   image     String
-  createdAt DateTime  @default(now())
+  content   String
+  createdAt DateTime @default(now())
   updatedAt DateTime
-  published Boolean   @default(false)
-  comments  Comment[]
 }
 
 model Comment {
-  id        String    @id @default(cuid())
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
   name      String
   email     String
   comment   String
-  createdAt DateTime  @default(now())
+  createdAt DateTime @default(now())
   updatedAt DateTime
-  published Boolean   @default(false)
-  postId    String
-  Post      Post      @relation(fields: [postId], references: [id])
-  commentId String?
-  Comment   Comment?  @relation("CommentToComment", fields: [commentId], references: [id])
-  replies   Comment[] @relation("CommentToComment")
 }
