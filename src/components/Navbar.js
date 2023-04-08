@@ -22,7 +22,7 @@ export default function Navbar() {
   const closeModal = () => setShowModal(false);
 
   return (
-    <nav className=" dark:bg-gray-700 sm:flex  justify-center items-center sm:py-5">
+    <nav className=" dark:bg-gray-700 bg-white sticky top-0 z-20 w-full sm:flex  justify-center items-center sm:py-5">
       {showModal && (
         <Modal isClose={closeModal}>
           <div className="px-5  w-full flex justify-center flex-col items-center space-y-14 sm:space-y-60">
@@ -41,7 +41,7 @@ export default function Navbar() {
         </Modal>
       )}
 
-      <div className="max-w-full w-full  md:px-6 ">
+      <div className="max-w-full w-full  md:px-6  ">
         <div className="relative flex items-center justify-between h-16">
           <div className="absolute inset-y-0 left-0 flex items-center md:hidden">
             <button
