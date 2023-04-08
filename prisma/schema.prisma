@@ -6,45 +6,46 @@ generator client {
 }
 
 datasource db {
-  provider = "mongodb"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
 model Course {
-  id               String         @id @default(auto()) @map("_id") @db.ObjectId
-  description      String
-  image            String
-  price            Float
-  video            String?
-  category         CATEGORY
-  duration         Int?
-  learningObj      String[]
-  targetAud        String[]
-  slug             String         @unique
-  isFeatured       Boolean        @default(false)
-  isOnline         Boolean        @default(false)
-  isTrending       Boolean        @default(false)
-  curriculum       String?
-  metaTitle        String?
-  metaDesc         String?
-  createdAt        DateTime       @default(now())
-  updatedAt        DateTime
-  published        Boolean        @default(false)
-  instructorId     String         @db.ObjectId
-  Instructor       Instructor     @relation(fields: [instructorId], references: [id])
-  relatedCoursesId String         @db.ObjectId
-  RelatedCourses   RelatedCourses @relation(fields: [relatedCoursesId], references: [id])
+  id           String     @id @default(cuid())
+  name         String
+  description  String
+  image        String
+  price        Float
+  video        String?
+  category     CATEGORY
+  duration     Int?
+  learningObj  String[]
+  targetAud    String[]
+  slug         String     @unique
+  isFeatured   Boolean    @default(false)
+  isOnline     Boolean    @default(false)
+  isTrending   Boolean    @default(false)
+  curriculum   String?
+  metaTitle    String?
+  metaDesc     String?
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime
+  published    Boolean    @default(false)
+  instructorId String
+  Instructor   Instructor @relation(fields: [instructorId], references: [id])
+  // relatedCoursesId String
+  // RelatedCourses   RelatedCourses @relation(fields: [relatedCoursesId], references: [id])
 }
 
-model RelatedCourses {
-  id        String   @id @default(auto()) @map("_id") @db.ObjectId
-  course    Course[]
-  createdAt DateTime @default(now())
-  updatedAt DateTime
-}
+// model RelatedCourses {
+//   id        String   @id @default(cuid())
+//   course    Course[]
+//   createdAt DateTime @default(now())
+//   updatedAt DateTime
+// }
 
 model Hero {
-  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  id        Int      @id @default(autoincrement())
   title     String
   subtitle  String
   button    String
@@ -54,7 +55,7 @@ model Hero {
 }
 
 model Instructor {
-  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  id        String   @id @default(cuid())
   name      String?
   email     String?  @unique
   image     String?
@@ -71,7 +72,7 @@ model Instructor {
 }
 
 model Testimonial {
-  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  id        String   @id @default(cuid())
   name      String
   image     String
   review    String
@@ -80,7 +81,7 @@ model Testimonial {
 }
 
 model Partners {
-  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  id        String   @id @default(cuid())
   name      String[]
   image     String[]
   createdAt DateTime @default(now())
@@ -90,14 +91,14 @@ model Partners {
 enum CATEGORY {
   DATA_SCIENCE
   CODING
-  CLOUD_SECURITY
-  GRAPHICS
-  MANAGEMENT
+  CLOUD_COMPUTING
+  GRAPHICS_MEDIA
+  OFFICE_PRODUCTIVITY
   NETWORKING
 }
 
 model Post {
-  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  id        String   @id @default(cuid())
   title     String
   subtitle  String
   image     String
@@ -107,7 +108,7 @@ model Post {
 }
 
 model Comment {
-  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  id        String   @id @default(cuid())
   name      String
   email     String
   comment   String
