@@ -7,7 +7,7 @@ export default function CourseDescription() {
       <div className="  sm:w-4/6 sm:space-y-12 text-sm">
         <div>
           <p>
-            Negotiation is a skill well worth mastering – by putting some simple
+            Negotiation is a skill well worth mastering - by putting some simple
             techniques into practise you could save thousands, and this course
             will show you how.
           </p>
@@ -20,7 +20,7 @@ export default function CourseDescription() {
             or car, deliberating contracts for your business, or reviewing your
             salary with your boss, your success in these activities will be
             heavily dependent on your ability to negotiate. Take this
-            negotiation course today and you’ll learn to negotiate masterfully,
+            negotiation course today and you'll learn to negotiate masterfully,
             giving yourself a considerably better chance of personal and
             financial success. Just check out the reviews to see what a
             difference successful negotiation can make to your life.

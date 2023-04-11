@@ -7,7 +7,7 @@ export default function FeaturedItem({ courses }) {
   return courses.map((course, index) => (
     <Link href={`/courseDetail/${course.slug}`}>
       <FeaturedCard
-        key={course.id}
+        key={index}
         img={course.image}
         level={course.level}
         courseTitle={course.name}
