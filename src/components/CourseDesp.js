@@ -20,7 +20,7 @@ export default function CourseDescription() {
             or car, deliberating contracts for your business, or reviewing your
             salary with your boss, your success in these activities will be
             heavily dependent on your ability to negotiate. Take this
-            negotiation course today and you'll learn to negotiate masterfully,
+            negotiation course today and you&apos;ll learn to negotiate masterfully,
             giving yourself a considerably better chance of personal and
             financial success. Just check out the reviews to see what a
             difference successful negotiation can make to your life.
@@ -43,7 +43,7 @@ export default function CourseDescription() {
               situations
             </p>
             <p>
-              Combat common techniques to ensure their profit isn't diminished
+              Combat common techniques to ensure their profit isn&apos;t diminished
               without them noticing
             </p>
           </div>
@@ -68,11 +68,11 @@ export default function CourseDescription() {
           <ul className="list-disc px-6 text-sm space-y-2">
             <li>There are no software or materials needed</li>
             <li>
-              You'll be equipped with confidence and skills during the course,
+              You&apos;ll be equipped with confidence and skills during the course,
               so simply need a willingness to learS
             </li>
             <li>
-              Have some examples in mind of areas you'd like to negotiate over
+              Have some examples in mind of areas you&apos;d like to negotiate over
             </li>
           </ul>
         </div>
