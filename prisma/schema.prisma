@@ -27,6 +27,7 @@ model Course {
   isOnline         Boolean        @default(false)
   isTrending       Boolean        @default(false)
   curriculum       String?
+  curriculumList   String[]
   metaTitle        String?
   metaDesc         String?
   createdAt        DateTime       @default(now())
