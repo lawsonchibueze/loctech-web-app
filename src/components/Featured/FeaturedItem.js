@@ -5,9 +5,8 @@ import Link from "next/link";
 
 export default function FeaturedItem({ courses }) {
   return courses.map((course, index) => (
-    <Link href={`/courseDetail/${course.slug}`}>
+    <Link   key={index} href={`/courseDetail/${course.slug}`}>
       <FeaturedCard
-        key={index}
         img={course.image}
         level={course.level}
         courseTitle={course.name}

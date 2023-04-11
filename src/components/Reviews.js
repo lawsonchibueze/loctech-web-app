@@ -28,7 +28,7 @@ export default function Reviews() {
         <AiOutlineStar className="text-[#FF2883] " />
         <AiOutlineStar className="text-[#FF2883] " />
       </div>
-      <p>I've improved my negotiation skill thank to this course.</p>
+      <p>I&apos;ve improved my negotiation skill thank to this course.</p>
     </div>
   );
 }
