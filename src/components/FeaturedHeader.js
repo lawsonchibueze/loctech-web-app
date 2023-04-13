@@ -9,9 +9,9 @@ export default function FeaturedHeader({ title, categories, btnName }) {
       {categories ? (
         <div className="flex justify-between items-center">
           <FeaturedHeaderItem title="All" param="all" />
-          <FeaturedHeaderItem title="Trending" param="trending" />
+          <FeaturedHeaderItem title="Office productivity" param="OFFICE_PRODUCTIVITY" />
 
-          <FeaturedHeaderItem title="Popularity" param="popularity" />
+          <FeaturedHeaderItem title="Data Science" param="DATA_SCIENCE" />
           <FeaturedHeaderItem title="Featured" param="Featured" />
           <FeaturedHeaderItem title="Art & Design" param="design" />
         </div>

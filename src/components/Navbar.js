@@ -91,9 +91,9 @@ export default function Navbar() {
                 </div>
                 <NavItem to="" name="Home" />
                 <NavItem to="" name="Courses" />
-                <NavItem to="" name="Blog" />
-                <NavItem to="" name="Pages" />
-                <NavItem to="" name="Features" />
+                <NavItem to="" name="Library" />
+                <NavItem to="" name="Instructors" />
+                <NavItem to="" name="Gallery" />
               </div>
             </div>
           </div>
@@ -113,9 +113,9 @@ export default function Navbar() {
             </div>
             <NavItem to="" name="Home" />
             <NavItem to="" name="Courses" />
-            <NavItem to="" name="Blog" />
-            <NavItem to="" name="Pages" />
-            <NavItem to="" name="Features" />
+            <NavItem to="" name="Library" />
+            <NavItem to="" name="Instructors" />
+            <NavItem to="" name="Gallery" />
           </div>
         </div>
       )}

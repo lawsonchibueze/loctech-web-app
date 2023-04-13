@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 export default function Hero({ image, title, subtitle, button }) {
   return (
-    <div className="px-3 py-8 bg-[#EEF0F4]  dark:bg-gray-700 dark:text-white  sm:px-20 sm:flex sm:flex-row sm:items-center ">
+    <div className="px-3 py-8 bg-[#EEF0F4]  dark:bg-gray-700 dark:text-white flex flex-col-reverse   sm:px-20  sm:flex-row sm:items-center ">
       <div className="text-start  flex flex-col flex-1">
         <h1 className="text-2xl font-bold my-4 sm:text-4xl">{title}</h1>
 
