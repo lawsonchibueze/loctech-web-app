@@ -3,13 +3,10 @@ import { Inter } from "next/font/google";
 import Hero from "@/components/Hero";
 import Card from "@/components/Card";
 import FeaturedHeader from "@/components/FeaturedHeader";
-import FeaturedCard from "@/components/Featured/FeaturedCard";
 import FeaturedItem from "@/components/Featured/FeaturedItem";
 import Timer from "@/components/Timer";
 import SubjectCard from "@/components/Subjects/SubjectCard";
-import Partners from "@/components/Partners";
 import NewsletterCard from "@/components/NewsletterCard";
-import Footer from "@/components/Footer/Footer";
 import { PrismaClient } from "@prisma/client";
 
 
