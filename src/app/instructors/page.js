@@ -24,30 +24,3 @@ const FetchInstructorPage = async () => {
 };
 
 export default FetchInstructorPage;
-
-// import React from "react";
-// import InstructorCard from "@/components/InstructorCard";
-
-// import { PrismaClient } from "@prisma/client";
-
-// const prisma = new PrismaClient();
-
-// const fetchInstructors = async () => {
-//   const instructors = await prisma.instructor.findMany();
-//   console.log(instructors);
-//   return instructors;
-// };
-
-// const Instructors = async () => {
-//   const instructors = await fetchInstructors();
-//   return (
-//     <div>
-//       {instructors.map((instructor) => {
-//         const { id, name } = instructor;
-//         return <InstructorCard key={id} name={name} />;
-//       })}
-//     </div>
-//   );
-// };
-
-// export default Instructors;
