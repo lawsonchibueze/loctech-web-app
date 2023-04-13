@@ -5,20 +5,22 @@ import { BsPerson } from "react-icons/bs";
 import CourseTag from "./Course_Tag/CourseTag";
 import CourseCategory from "./CourseCategory";
 import RelatedCourse from "./RelatedCourse";
-export default function CourseDetailHero() {
+export default function CourseDetailHero({
+  courseTitle,
+  courseDuration,
+  coursePrice,
+  courseCategory,
+}) {
   return (
-    <div className="bg-[#EEF0F4] sm:h-96 sm:py-10  flex flex-col justify-between">
-      <div className=" px-4  py-4 sm:mx-20">
-        <p className="text-sm">
-          Home / Courses / Business / Communications Communications Successful
-          Negotiation: Master Your Negotiating Skills
-        </p>
+    <div className="sm:h-96 sm:py-10  flex flex-col justify-between">
+      <div className=" px-4  py-4 sm:mx-20 sm:px-0">
+        <p className="text-sm">Home / Courses / {courseTitle}</p>
       </div>
       <div className="mx-4 sm:mx-20 my-10  flex  justify-between  flex-col sm:flex-row">
         <div>
-          <p className="text-sm ">Communications</p>
+          <p className="text-sm ">{courseCategory.replace("_", " ")}</p>
           <h2 className="text-base sm:text-2xl sm:tracking-wide font-normal ">
-            Successful Negotiation: Master Your Negotiating Skills
+            {courseTitle}
           </h2>
           <div className="flex items-center mt-5">
             <Image
@@ -54,9 +56,12 @@ export default function CourseDetailHero() {
           </div>
         </div>
         <div className="relative flex flex-col">
-          <CourseTag />
+          <CourseTag
+            courseDuration={courseDuration}
+            coursePrice={coursePrice}
+          />
           <CourseCategory />
-          <RelatedCourse/>
+          <RelatedCourse />
         </div>
       </div>
     </div>

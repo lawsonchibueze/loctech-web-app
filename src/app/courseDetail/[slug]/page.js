@@ -27,11 +27,21 @@ const fetchCourseBySlug = async (slug) => {
 export default async function page({ params }) {
   const { slug } = params;
   const course = await fetchCourseBySlug(slug);
-  console.log({ course });
+  console.log("------", course);
   return (
     <div>
-      <CourseDetailHero />
-      <CourseDescription />
+      <CourseDetailHero
+        courseTitle={course?.name}
+        courseDuration={course?.duration}
+        coursePrice={course?.price}
+        courseCategory ={course?.category}
+      />
+      <CourseDescription
+        description={course?.description}
+        courseLearningObj={course?.learningObj}
+        courseTargetAudience={course?.targetAud}
+        coursePrerequisites = {course?.prerequisites}
+        />
       <Curriculum />
       <InstructorCard />
       <RatingCard />

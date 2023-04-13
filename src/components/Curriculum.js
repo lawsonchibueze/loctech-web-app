@@ -19,7 +19,6 @@ export default function Curriculum() {
         <CurriculumItem
           title="Introduction"
           icon={<HiOutlineLockClosed />}
-          color="bg-gray-100"
         />
         <CurriculumItem
           title="Internal vs External Factors"
@@ -37,7 +36,6 @@ export default function Curriculum() {
         <CurriculumItem
           title="The Flinch"
           icon={<HiOutlineLockClosed />}
-          color="bg-gray-100"
         />
         <CurriculumItem title="aa" icon={<HiOutlineLockClosed />} />
       </div>
