@@ -2,14 +2,14 @@ import React from "react";
 import Image from "next/image";
 import { AiOutlineStar } from "react-icons/ai";
 
-export default function InstructorCard() {
+export default function InstructorCard({ name, image }) {
   return (
     <div className="sm:mx-20 px-4 my-10">
       <p className="font-semibold text-base  sm:text-lg">Your Instructors</p>
       <div className="flex items-start mt-8">
         <div>
           <Image
-            src="/smiling-young-african-college-student-doing-KYGJVRW.png"
+            src={image}
             width={200}
             height={200}
             alt="image not available"
@@ -17,7 +17,7 @@ export default function InstructorCard() {
           />
         </div>
         <div className="text-sm mx-5  sm:mx-8 space-y-3 ">
-          <p className="font-semibold">Alali Godbless</p>
+          <p className="font-semibold">{name}</p>
           <div className="flex items-center ">
             <div className="flex items-center mr-6">
               <AiOutlineStar className="text-[#FF2883] text-lg" />

@@ -92,7 +92,7 @@ export default function Navbar() {
                 <NavItem to="" name="Home" />
                 <NavItem to="" name="Courses" />
                 <NavItem to="" name="Library" />
-                <NavItem to="" name="Instructors" />
+                <NavItem to="/instructors" name="Instructors" />
                 <NavItem to="" name="Gallery" />
               </div>
             </div>

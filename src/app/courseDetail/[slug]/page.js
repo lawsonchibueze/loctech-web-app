@@ -7,6 +7,7 @@ import InstructorCard from "@/components/InstructorCard";
 import RatingCard from "@/components/RatingCard";
 import Reviews from "@/components/Reviews";
 import { PrismaClient } from "@prisma/client";
+import Instructors from "@/app/instructors/page";
 
 const prisma = new PrismaClient();
 
@@ -34,14 +35,14 @@ export default async function page({ params }) {
         courseTitle={course?.name}
         courseDuration={course?.duration}
         coursePrice={course?.price}
-        courseCategory ={course?.category}
+        courseCategory={course?.category}
       />
       <CourseDescription
         description={course?.description}
         courseLearningObj={course?.learningObj}
         courseTargetAudience={course?.targetAud}
-        coursePrerequisites = {course?.prerequisites}
-        />
+        coursePrerequisites={course?.prerequisites}
+      />
       <Curriculum />
       <InstructorCard />
       <RatingCard />
