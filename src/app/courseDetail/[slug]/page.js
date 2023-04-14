@@ -12,7 +12,7 @@ import Instructors from "@/app/instructors/page";
 const prisma = new PrismaClient();
 
 const fetchInstructorById = async (instructorId) => {
-  const instructor = await prisma.instructor.findFirst({
+  const instructor = await prisma.instructor.findMany({
     where: {
       instructorId,
     },
