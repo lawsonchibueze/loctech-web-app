@@ -9,8 +9,8 @@ export default function SubjectCard({ title, img }) {
         width={300}
         height={300}
         placeholder="blur"
-        blurDataURL="/"
         className="w-full h-80 rounded-lg rounded-b-lg object-cover	"
+        blurDataURL="/spinner.svg"
       />
       <div className="absolute inset-0">
         <div className="h-full w-full bg-gradient-to-t from-black to-transparent"></div>

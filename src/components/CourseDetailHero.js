@@ -10,6 +10,8 @@ export default function CourseDetailHero({
   courseDuration,
   coursePrice,
   courseCategory,
+  courseImage,
+  courseInstructor,
 }) {
   return (
     <div className="sm:h-96 sm:py-10  flex flex-col justify-between">
@@ -18,21 +20,23 @@ export default function CourseDetailHero({
       </div>
       <div className="mx-4 sm:mx-20 my-10  flex  justify-between  flex-col sm:flex-row">
         <div>
-          <p className="text-sm ">{courseCategory.replace("_", " ")}</p>
+          <p className="text-sm ">{courseCategory?.replace("_", " ")}</p>
           <h2 className="text-base sm:text-2xl sm:tracking-wide font-normal ">
             {courseTitle}
           </h2>
           <div className="flex items-center mt-5">
             <Image
-              src="/smiling-black-male-student-in-modern-university-PJG86AL.png"
+              src={courseInstructor.image}
               width={60}
               height={60}
               alt="smiling-black-male-student-in-modern-university-PJG86AL"
               className="rounded-full w-auto h-auto object-cover"
+              placeholder="blur"
+              blurDataURL="/spinner.svg"
             />
 
             <p className="text-base font-bold sm:text-lg mx-5">
-              Alali Godbless
+              {courseInstructor.name}
             </p>
             <p className="font-light">Last Update June 8,2022</p>
           </div>
@@ -57,6 +61,7 @@ export default function CourseDetailHero({
         </div>
         <div className="relative flex flex-col">
           <CourseTag
+            courseImage={courseImage}
             courseDuration={courseDuration}
             coursePrice={coursePrice}
           />

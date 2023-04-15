@@ -21,6 +21,8 @@ export default function NewsletterCard() {
           width={300}
           height={300}
           alt="Image not available"
+          placeholder="blur"
+          blurDataURL="/spinner.svg"
         />
       </div>
     </div>
