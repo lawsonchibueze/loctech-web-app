@@ -38,9 +38,28 @@ const fetchCourseBySlug = async (slug) => {
 export default async function page({ params }) {
   const { slug, instructorId } = params;
   const course = await fetchCourseBySlug(slug);
-  console.log("------", course);
-  const instructor = await fetchInstructorById(instructorId);
-  console.log(instructor);
+  const instructors = await fetchInstructorById(instructorId);
+
+  const filteredInstructor = instructors?.filter(
+    (instructor) => course?.instructorId === instructor.id //  returns the instructor of the course by checking course.id === instructor.id;
+  );
+
+  const courseInstructor = {
+    //populating the instructor object
+    id: filteredInstructor[0]?.id,
+    name: filteredInstructor[0]?.name,
+    email: filteredInstructor[0]?.email,
+    image: filteredInstructor[0]?.image,
+    bio: filteredInstructor[0]?.bio,
+    rating: filteredInstructor[0]?.rating,
+    reviews: filteredInstructor[0]?.reviews,
+    facebook: filteredInstructor[0]?.facebook,
+    twitter: filteredInstructor[0]?.twitter,
+    instagram: filteredInstructor[0]?.instagram,
+    linkedin: filteredInstructor[0]?.linkedin,
+  };
+
+  console.log("=========", course);
   return (
     <div>
       <CourseDetailHero
@@ -48,6 +67,8 @@ export default async function page({ params }) {
         courseDuration={course?.duration}
         coursePrice={course?.price}
         courseCategory={course?.category}
+        courseImage={course?.image}
+        courseInstructor={courseInstructor}
       />
       <CourseDescription
         description={course?.description}

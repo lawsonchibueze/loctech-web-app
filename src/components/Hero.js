@@ -22,6 +22,8 @@ export default function Hero({ image, title, subtitle, button }) {
           alt="pexels-cottonbro-studio-5083408.png"
           className="  object-cover rounded-lg w-full"
           priority={true}
+          placeholder="blur"
+          blurDataURL="/spinner.svg"
         />
       </div>
     </div>

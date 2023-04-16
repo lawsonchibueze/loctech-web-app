@@ -20,6 +20,8 @@ export default function Card({ title, btnName, image }) {
           height={300}
           className="rounded-lg h-auto"
           alt="Image not available"
+          placeholder="blur"
+          blurDataURL="/spinner.svg"
         />
       </div>
     </div>

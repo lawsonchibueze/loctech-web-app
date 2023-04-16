@@ -30,6 +30,8 @@ export default function FeaturedItem({ courses, param }) {
           price={course.price}
           description={course.description}
           category={course.category}
+          placeholder="blur"
+          blurDataURL="/spinner.svg"
         />
       </Link>
     ))
