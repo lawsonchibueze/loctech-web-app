@@ -9,7 +9,6 @@ import SubjectCard from "@/components/Subjects/SubjectCard";
 import NewsletterCard from "@/components/NewsletterCard";
 import { PrismaClient } from "@prisma/client";
 
-
 const inter = Inter({ subsets: ["latin"] });
 
 const prisma = new PrismaClient();
@@ -24,8 +23,7 @@ const fetchHero = async () => {
   return hero;
 };
 
-export default async function Home({searchParams}) {
-
+export default async function Home({ searchParams }) {
   const courses = await fetchCourse();
   const hero = await fetchHero();
   // console.log("=====", courses);
@@ -58,7 +56,7 @@ export default async function Home({searchParams}) {
       </div>
       <FeaturedHeader title="Explore Featured Courses " categories />
       <div className=" gap-4 mx-3 sm:grid sm:grid-cols-2 sm:gap-x-8 sm:mx-20 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5   py-4 ">
-        <FeaturedItem courses={courses} param={searchParams}/>
+        <FeaturedItem courses={courses} param={searchParams} />
       </div>
 
       <Timer />
