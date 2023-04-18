@@ -89,8 +89,8 @@ export default function Navbar() {
                 <div className="flex items-center space-x-5">
                   <DarkMode />
                 </div>
-                <NavItem to="" name="Home" />
-                <NavItem to="" name="Courses" />
+                <NavItem to="/" name="Home" />
+                <NavItem to="/about-us" name="About us" />
                 <NavItem to="" name="Library" />
                 <NavItem to="/instructors" name="Instructors" />
                 <NavItem to="" name="Gallery" />
@@ -111,10 +111,10 @@ export default function Navbar() {
                 <HiOutlineSearch />
               </button>
             </div>
-            <NavItem to="" name="Home" />
-            <NavItem to="" name="Courses" />
+            <NavItem to="/" name="Home" />
+            <NavItem to="/about-us" name="About us" />
             <NavItem to="" name="Library" />
-            <NavItem to="" name="Instructors" />
+            <NavItem to="/instructors" name="Instructors" />
             <NavItem to="" name="Gallery" />
           </div>
         </div>
