@@ -26,7 +26,11 @@ const fetchHero = async () => {
 export default async function Home({ searchParams }) {
   const courses = await fetchCourse();
   const hero = await fetchHero();
-  // console.log("=====", courses);
+
+  const featuredCourses = courses.filter(
+    (course) => course.isFeatured === true
+  ); //filter featured courses
+  console.log("=====", courses);
   // console.log('==========',hero);
   return (
     <div>
@@ -47,16 +51,18 @@ export default async function Home({ searchParams }) {
           image="/black-woman-in-modern-office-speeking-on-phone-PHV96YW (1).png"
           title="Online Courses from Loctech IT Training Institute"
           btnName="Find Out More"
+          to="/online-courses"
         />
         <Card
           image="/black-student-boy-preparing-research-LKD6ZMJ.png"
           title="Master Your Coding Skills in Your Space"
           btnName="View More Courses"
+          to="/offline-courses"
         />
       </div>
       <FeaturedHeader title="Explore Featured Courses " categories />
       <div className=" gap-4 mx-3 sm:grid sm:grid-cols-2 sm:gap-x-8 sm:mx-20 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5   py-4 ">
-        <FeaturedItem courses={courses} param={searchParams} />
+        <FeaturedItem courses={featuredCourses} param={searchParams} />
       </div>
 
       <Timer />
@@ -65,20 +71,36 @@ export default async function Home({ searchParams }) {
 
       <div className=" gap-4 mx-3 sm:grid sm:grid-cols-2 sm:gap-x-8 sm:mx-20 lg:grid-cols-4 xl:grid-cols-4 2xl:grid-cols-4   py-4 ">
         <SubjectCard
-          title="Art & Design"
+          title="Coding"
           img="/black-businesswoman-using-computer-3LRZ45J.png"
+          param="coding"
         />
         <SubjectCard
-          title="Business"
+          title="UI/UX"
           img="/black-business-guy-taking-notes-in-notebook-M5W6MA5.png"
+          param="graphics_media"
         />
+        <SubjectCard
+          title="Networking"
+          img="/african-american-student-working-in-cafe-QUHME48 (1).png"
+          param="networking"
+        />
+        <SubjectCard
+          title="Productivity"
+          img="/black-woman-in-modern-office-speeking-on-phone-PHV96YW (1).png"
+          param="office_productivity"
+        />
+
         <SubjectCard
           title="Data Science"
-          img="/african-american-student-working-in-cafe-QUHME48 (1).png"
-        />
-        <SubjectCard
-          title="Development"
           img="/black-woman-in-modern-office-speeking-on-phone-PHV96YW (1).png"
+          param="data_science"
+        />
+
+        <SubjectCard
+          title="Cloud Computing"
+          img="/black-woman-in-modern-office-speeking-on-phone-PHV96YW (1).png"
+          param="cloud_computing"
         />
       </div>
       <FeaturedHeader title="Loctech Partners " btnName="View all" />
