@@ -6,7 +6,7 @@ export default function History() {
       <div className="flex px-4  flex-col md:flex-row sm:items-start sm:justify-between sm:px-20  md:space-x-8 text-base ">
         <div className="flex-1 text-3xl font-bold ">
           <p className="w-fit  border-b-solid border-b-4 border-b-[#FF2883]">
-            Loctech's History
+            Loctech&apos;s History
           </p>
         </div>
 
