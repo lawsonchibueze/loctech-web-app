@@ -17,7 +17,7 @@ export default function History() {
             choosing the right place. We do not use special formulas to select
             students. We look at every single applicant&apos;s application, academic
             and personal, to select students who suit to our community with a
-            full range of backgrounds. If you would like to study
+            full range of backgrounds. 
           </p>
         </div>
 
