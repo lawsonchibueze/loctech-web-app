@@ -69,10 +69,10 @@ export default function Navbar() {
               </Link>
             </div>
 
-            <div className="items-center hidden sm:flex">
+            {/* <div className="items-center hidden sm:flex">
               <TbCategory className="text-2xl mx-4 " />
               <p className="text-black dark:text-white">Category</p>
-            </div>
+            </div> */}
 
             <div className="hidden  md:ml-6 md:flex items-center">
               <div className="flex space-x-4">
@@ -90,10 +90,12 @@ export default function Navbar() {
                   <DarkMode />
                 </div>
                 <NavItem to="/" name="Home" />
+                <NavItem to="" name="Courses" />
+
                 <NavItem to="/about-us" name="About us" />
-                <NavItem to="" name="Library" />
+                {/* <NavItem to="" name="Library" /> */}
                 <NavItem to="/instructors" name="Instructors" />
-                <NavItem to="" name="Gallery" />
+                {/* <NavItem to="" name="Gallery" /> */}
               </div>
             </div>
           </div>
@@ -112,10 +114,12 @@ export default function Navbar() {
               </button>
             </div>
             <NavItem to="/" name="Home" />
+            <NavItem to="" name="Courses" />
+
             <NavItem to="/about-us" name="About us" />
-            <NavItem to="" name="Library" />
+            {/* <NavItem to="" name="Library" /> */}
             <NavItem to="/instructors" name="Instructors" />
-            <NavItem to="" name="Gallery" />
+            {/* <NavItem to="" name="Gallery" /> */}
           </div>
         </div>
       )}

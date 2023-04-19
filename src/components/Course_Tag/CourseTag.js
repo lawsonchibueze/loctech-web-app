@@ -13,10 +13,14 @@ export default function CourseTag({
   coursePrice,
   courseDuration,
   courseImage,
+  courseCategory,
+  courseMethod
 }) {
+  const category = courseCategory.replace("_", " ");
+
   return (
     <>
-      <div className=" w-full sm:w-80   ">
+      <div className=" w-full sm:w-80  mt-8 sm:mt-0 ">
         <Image
           src={courseImage}
           width={100}
@@ -31,8 +35,8 @@ export default function CourseTag({
             N {formatPrice(coursePrice)}
           </p>
           <CourseTagItem
-            title="Level"
-            subtitle="All Levels"
+            title="Category"
+            subtitle={category}
             color="gray"
             icon={<CiViewList className="mr-2 " />}
           />
@@ -42,25 +46,27 @@ export default function CourseTag({
             color="gray"
             icon={<RiTimeLine className="mr-2 " />}
           />
+
           <CourseTagItem
+            title="Method"
+            subtitle={courseMethod === true  ? "Online" : "Offline"}
+            color="gray"
+            icon={<CiViewList className="mr-2 " />}
+          />
+          {/* <CourseTagItem
             title="Lectures"
             subtitle="5 Lectures"
             color="gray"
             icon={<RxTrackNext className="mr-2 " />}
-          />
-          <CourseTagItem
-            title="Subject"
-            subtitle="Graphic"
-            color="gray"
-            icon={<CiViewList className="mr-2 " />}
-          />
-          <CourseTagItem
+          /> */}
+
+          {/* <CourseTagItem
             title="Language"
             subtitle="English"
             color="transparent"
             icon={<CiGlobe className="mr-2 " />}
-          />
-          <div className="flex flex-col px-6 space-y-8 py-8">
+          /> */}
+          {/* <div className="flex flex-col px-6 space-y-8 py-8">
             <button className="bg-[#FF2883] p-4 rounded-lg text-white">
               Add To Cart
             </button>
@@ -68,7 +74,7 @@ export default function CourseTag({
             <button className=" p-4 rounded-lg bg-white shadow-lg text-[#FF2883] ">
               Add To Wishlist
             </button>
-          </div>
+          </div> */}
 
           <div className="flex items-center justify-center text-xl text-gray-400 py-5">
             <Socials icon={<TfiTwitter />} />

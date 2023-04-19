@@ -35,9 +35,26 @@ const fetchCourseBySlug = async (slug) => {
   return course;
 };
 
+// const fetchRelatedCoursesById = async (relatedCoursesId) => {
+//   const course = await prisma.course.findUnique({
+//     where: {
+//       relatedCoursesId,
+//     },
+//   });
+
+//   if (!course) {
+//     return null;
+//   }
+
+//   return course;
+// };
+
 export default async function page({ params }) {
   const { slug, instructorId } = params;
   const course = await fetchCourseBySlug(slug);
+  // const relatedCourses = await fetchRelatedCoursesById(
+  //   course.relatedCoursesId
+  // );
   const instructors = await fetchInstructorById(instructorId);
 
   const filteredInstructor = instructors?.filter(
@@ -59,7 +76,7 @@ export default async function page({ params }) {
     linkedin: filteredInstructor[0]?.linkedin,
   };
 
-  console.log("=========", course);
+  // console.log("=========", course);
   return (
     <div>
       <CourseDetailHero
@@ -69,6 +86,7 @@ export default async function page({ params }) {
         courseCategory={course?.category}
         courseImage={course?.image}
         courseInstructor={courseInstructor}
+        courseMethod = {course?.isOnline}
       />
       <CourseDescription
         description={course?.description}
@@ -77,9 +95,9 @@ export default async function page({ params }) {
         coursePrerequisites={course?.prerequisites}
       />
       <Curriculum />
-      <InstructorCard />
+      {/* <InstructorCard /> */}
       <RatingCard />
-      <Reviews />
+      {/* <Reviews /> */}
     </div>
   );
 }
