@@ -7,7 +7,7 @@ import React from "react";
 export default function page() {
   return <div>
     <AboutUsHero/>
-    <History/>
+    {/* <History/> */}
     <AboutUsService/>
     <ServiceCard/>
     <ServiceCard right/>
