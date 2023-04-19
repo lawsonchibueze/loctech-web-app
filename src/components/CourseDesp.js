@@ -7,9 +7,9 @@ export default function CourseDescription({
   coursePrerequisites,
 }) {
   return (
-    <div className="px-4 sm:mx-20 sm:py-4">
-      <h2 className="text-xl font-bold py-4">About This Course</h2>
-      <div className="  sm:w-4/6 sm:space-y-12 text-sm leading-loose text-left">
+    <div className="px-4 sm:mx-20 sm:py-5">
+      <h2 className="text-xl font-bold">About This Course</h2>
+      <div className="  sm:w-4/6 sm:space-y-12 text-sm">
         <p>{description}</p>
       </div>
 
@@ -19,7 +19,7 @@ export default function CourseDescription({
         <div className="sm:flex text-sm">
           <div className="p-5 space-y-5">
             {courseLearningObj?.map((item, index) => (
-              <li key={index}>{item}</li>
+              <p key={index}>{item}</p>
             ))}
           </div>
         </div>

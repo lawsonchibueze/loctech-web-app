@@ -4,7 +4,7 @@ import FooterItem from "./FooterItem";
 export default function Footer() {
   return (
     <>
-      <div className="mx-4 sm:mx-20 sm:mt-8 sm:py-10 flex flex-row sm:justify-between sm:items-start space-x-8">
+      <div className=" sm:mx-20 sm:mt-8 sm:py-10 flex flex-row sm:justify-between sm:items-start">
         <div className="flex flex-col text-start sm:flex-1 sm:flex-col  sm:text-start">
           <Image
             src="/loctech PNG reg.png"
@@ -19,7 +19,7 @@ export default function Footer() {
           </p>
           <p className="text-sm font-light">customercare@loctechng.com</p>
         </div>
-        <div className=" flex-col sm:flex  sm:flex-1 sm:flex-col text-center sm:text-start hidden">
+        <div className="flex flex-col sm:flex-1 sm:flex-col text-center sm:text-start">
           <p className="text-sm font-bold">About</p>
           <FooterItem title="About Us" />
           <FooterItem title="Courses" />
@@ -27,7 +27,7 @@ export default function Footer() {
           <FooterItem title="Events" />
           <FooterItem title="Become A Teacher" />
         </div>
-        <div className=" flex-col sm:flex  sm:flex-1 sm:flex-col text-center sm:text-start hidden">
+        <div className="flex flex-col sm:flex-1 sm:flex-col text-center sm:text-start">
           <p className="text-sm font-bold">Links</p>
 
           <FooterItem title="News & Blogs" />
@@ -36,7 +36,7 @@ export default function Footer() {
           <FooterItem title="Partners" />
           <FooterItem title="Career" />
         </div>
-        <div className="flex-col  sm:flex sm:flex-1 sm:flex-col sm:text-start text-center  hidden">
+        <div className="flex flex-col sm:flex-1 sm:flex-col sm:text-start text-center ">
           <p className="text-sm font-bold">Support</p>
           <FooterItem title="Documentation" />
           <FooterItem title="FAQs" />

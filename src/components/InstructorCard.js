@@ -5,7 +5,7 @@ import { AiOutlineStar } from "react-icons/ai";
 export default function InstructorCard({ name, image }) {
   return (
     <div className="sm:mx-20 px-4 my-10">
-      
+      <p className="font-semibold text-base  sm:text-lg">Your Instructors</p>
       <div className="flex items-start mt-8">
         <div>
           <Image
