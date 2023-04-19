@@ -4,9 +4,9 @@ import FeaturedHeaderItem from "./FeaturedHeaderItem";
 
 export default function FeaturedHeader({ title, categories, btnName }) {
   return (
-    <div className="mx-3 sm:p-4 sm:mx-20 sm:flex sm:flex-row sm:items-center sm:justify-center">
+    <div className="mx-3 sm:p-4 sm:mx-20 sm:flex sm:flex-row sm:items-center sm:justify-between">
       <h3 className="text-2xl font-semibold	 sm:4xl  ">{title}</h3>
-      {/* {categories ? (
+      {categories ? (
         <div className="flex justify-between items-center">
           <FeaturedHeaderItem title="All" param="all" />
           <FeaturedHeaderItem title="Office productivity" param="OFFICE_PRODUCTIVITY" />
@@ -19,7 +19,7 @@ export default function FeaturedHeader({ title, categories, btnName }) {
         <button className="text-[#FF2883] bg-[#EEF0F4] cursor-pointer text-lg sm:py-2 sm:px-4 font-semibold sm:xl">
           {btnName}
         </button>
-      )} */}
+      )}
     </div>
   );
 }
