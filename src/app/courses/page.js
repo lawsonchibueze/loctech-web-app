@@ -10,7 +10,7 @@ const fetchCourse = async () => {
 };
 
 export default async function page({ searchParams }) {
-  const category = searchParams.category.toUpperCase();
+  const category = searchParams.category?.toUpperCase();
   const courses = await fetchCourse();
   const categorizedCourses = courses.filter(
     (course) => course.category === category

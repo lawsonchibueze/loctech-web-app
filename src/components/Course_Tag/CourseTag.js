@@ -16,7 +16,7 @@ export default function CourseTag({
   courseCategory,
   courseMethod
 }) {
-  const category = courseCategory.replace("_", " ");
+  const category = courseCategory?.replace("_", " ");
 
   return (
     <>

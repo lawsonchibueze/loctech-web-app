@@ -76,7 +76,7 @@ export default async function page({ params }) {
     linkedin: filteredInstructor[0]?.linkedin,
   };
 
-  // console.log("=========", course);
+  console.log("=========", course?.curriculumList);
   return (
     <div>
       <CourseDetailHero
@@ -86,7 +86,7 @@ export default async function page({ params }) {
         courseCategory={course?.category}
         courseImage={course?.image}
         courseInstructor={courseInstructor}
-        courseMethod = {course?.isOnline}
+        courseMethod={course?.isOnline}
       />
       <CourseDescription
         description={course?.description}
@@ -94,7 +94,10 @@ export default async function page({ params }) {
         courseTargetAudience={course?.targetAud}
         coursePrerequisites={course?.prerequisites}
       />
-      <Curriculum />
+      <Curriculum
+        courseCurriculum={course?.curriculumList}
+        curriculum={course?.curriculum}
+      />
       {/* <InstructorCard /> */}
       <RatingCard />
       {/* <Reviews /> */}
