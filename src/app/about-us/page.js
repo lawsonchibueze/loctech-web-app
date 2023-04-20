@@ -8,7 +8,7 @@ export default function page() {
   return (
     <div>
       <h1 className="text-center pt-6 text-rose-700 text-5xl">
-        Comming Soon !!
+        About us Page, under Maintenance !!
       </h1>
       {/* <AboutUsHero/> */}
       {/* Was Commented Earlier History Component */}
