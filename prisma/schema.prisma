@@ -104,6 +104,55 @@ enum CATEGORY {
   NETWORKING
 }
 
+model CourseCategory {
+  id          String   @id @default(cuid())
+  name        String
+  slug        String   @unique
+  image       String
+  description String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime
+}
+
+model About {
+  id         String   @id @default(cuid())
+  title      String
+  subtitle   String
+  coverImage String
+  image1     String
+  image2     String
+  image3     String
+  content    String
+  mission    String
+  vision     String
+  values     String
+  gallery    String[]
+  partners   String[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime
+}
+
+model OnlineCourse {
+  id        String   @id @default(cuid())
+  title     String
+  subtitle  String
+  image     String
+  button    String
+  createdAt DateTime @default(now())
+  updatedAt DateTime
+}
+
+model OfflineCourse {
+  id        String   @id @default(cuid())
+  title     String
+  subtitle  String
+  image     String
+  button    String
+  createdAt DateTime @default(now())
+  updatedAt DateTime
+}
+
 model Post {
   id        String   @id @default(cuid())
   title     String
