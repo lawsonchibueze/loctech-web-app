@@ -7,7 +7,7 @@ import FeaturedItem from "@/components/Featured/FeaturedItem";
 import Timer from "@/components/Timer";
 import SubjectCard from "@/components/Subjects/SubjectCard";
 import NewsletterCard from "@/components/NewsletterCard";
-import { PrismaClient } from "@prisma/client";
+import { PrismaClient, CoureCategory } from "@prisma/client";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,26 +22,24 @@ const fetchHero = async () => {
   const hero = await prisma.hero.findMany();
   return hero;
 };
- 
 
 //Course category function
-// const fetchCourseCategory = async () => {
-//   const category = await prisma.courseCategory.findMany();
-//   return category;
-// };
- 
-
+const fetchCourseCategory = async () => {
+  const category = await prisma.CourseCategory.findMany();
+  return category;
+};
 
 export default async function Home({ searchParams }) {
   const courses = await fetchCourse();
   const hero = await fetchHero();
-  // const category = await fetchCourseCategory()
+  const category = await fetchCourseCategory();
 
   const featuredCourses = courses.filter(
     (course) => course.isFeatured === true
   ); //filter featured courses
   // console.log("=====", courses);
   //  console.log('==========',category);
+  console.log(category);
   return (
     <div>
       {hero.map((hero) => {
