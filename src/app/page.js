@@ -30,7 +30,7 @@ export default async function Home({ searchParams }) {
   const featuredCourses = courses.filter(
     (course) => course.isFeatured === true
   ); //filter featured courses
-  // console.log("=====", courses);
+  console.log("=====", courses);
   // console.log('==========',hero);
   return (
     <div>
