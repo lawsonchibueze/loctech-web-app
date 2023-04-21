@@ -7,7 +7,7 @@ import FeaturedItem from "@/components/Featured/FeaturedItem";
 import Timer from "@/components/Timer";
 import SubjectCard from "@/components/Subjects/SubjectCard";
 import NewsletterCard from "@/components/NewsletterCard";
-import { PrismaClient, CoureCategory } from "@prisma/client";
+import { PrismaClient } from "@prisma/client";
 
 const inter = Inter({ subsets: ["latin"] });
 
