@@ -15,11 +15,22 @@ const FetchInstructorPage = async () => {
 
   return (
     <div>
-      <p className="font-semibold text-base mx-4 sm:text-lg sm:mx-20">Your Instructors</p>
-      {instructors.map((instructor) => {
-        const { id, name, image } = instructor;
-        return <InstructorCard key={id} name={name} image={image} />;
-      })}
+      <p className="font-semibold text-base mx-4 sm:text-lg sm:mx-20">
+        Your Instructors
+      </p>
+      <div className=" gap-4 mx-3 sm:grid sm:grid-cols-2 sm:gap-x-8 sm:mx-20 lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-3   py-4 ">
+        {instructors.map((instructor) => {
+          return (
+            <InstructorCard
+              key={instructor?.id}
+              name={instructor?.name}
+              image={instructor?.image}
+              rating={instructor?.rating}
+              bio= {instructor?.bio}
+            />
+          );
+        })}
+      </div>
     </div>
   );
 };
