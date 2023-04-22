@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Inter } from "next/font/google";
 import Hero from "@/components/Hero";
 import Card from "@/components/Card";
@@ -37,9 +36,10 @@ export default async function Home({ searchParams }) {
   const featuredCourses = courses.filter(
     (course) => course.isFeatured === true
   ); //filter featured courses
-  // console.log("=====", courses);
-  //  console.log('==========',category);
-  console.log(category);
+
+  console.log("====", category);
+  // console.log("++++++++",courses);
+
   return (
     <div>
       {hero.map((hero) => {
@@ -80,7 +80,7 @@ export default async function Home({ searchParams }) {
       <div className=" gap-4 mx-3 sm:grid sm:grid-cols-2 sm:gap-x-8 sm:mx-20 lg:grid-cols-4 xl:grid-cols-4 2xl:grid-cols-4   py-4 ">
         <SubjectCard
           title="Coding"
-          img="/black-businesswoman-using-computer-3LRZ45J.png"
+          img="/category/"
           param="coding"
         />
         <SubjectCard

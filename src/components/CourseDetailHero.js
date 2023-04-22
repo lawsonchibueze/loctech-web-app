@@ -68,7 +68,7 @@ export default function CourseDetailHero({
             courseCategory={courseCategory}
             courseMethod={courseMethod}
           />
-          <CourseCategory  />
+          {/* <CourseCategory  /> */}
           <RelatedCourse />
         </div>
       </div>

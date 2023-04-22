@@ -36,7 +36,7 @@ const fetchCourseBySlug = async (slug) => {
 };
 
 // const fetchRelatedCoursesById = async (relatedCoursesId) => {
-//   const course = await prisma.course.findUnique({
+//   const course = await prisma.RelatedCourses.findUnique({
 //     where: {
 //       relatedCoursesId,
 //     },
@@ -76,7 +76,6 @@ export default async function page({ params }) {
     linkedin: filteredInstructor[0]?.linkedin,
   };
 
-  console.log("=========", course?.curriculumList);
   return (
     <div>
       <CourseDetailHero

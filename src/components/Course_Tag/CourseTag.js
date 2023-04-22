@@ -49,7 +49,7 @@ export default function CourseTag({
 
           <CourseTagItem
             title="Method"
-            subtitle={courseMethod === true  ? "Online" : "Offline"}
+            subtitle={courseMethod === true  ? "Online" : "Classroom"}
             color="gray"
             icon={<CiViewList className="mr-2 " />}
           />
