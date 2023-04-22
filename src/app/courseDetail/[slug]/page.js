@@ -84,7 +84,6 @@ export default async function page({ params }) {
         coursePrice={course?.price}
         courseCategory={course?.category}
         courseImage={course?.image}
-        courseInstructor={courseInstructor}
         courseMethod={course?.isOnline}
       />
       <CourseDescription
@@ -96,9 +95,10 @@ export default async function page({ params }) {
       <Curriculum
         courseCurriculum={course?.curriculumList}
         curriculum={course?.curriculum}
+        duration={course?.duration}
       />
       {/* <InstructorCard /> */}
-      <RatingCard />
+      <RatingCard courseInstructor={courseInstructor} />
       {/* <Reviews /> */}
     </div>
   );
