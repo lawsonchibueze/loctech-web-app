@@ -17,27 +17,28 @@ export default function CourseDescription({
         <p className="font-bold text-base">Learning Objectives</p>
 
         <div className="sm:flex text-sm">
-          <div className="p-5 space-y-5">
+          <ul className="p-5 space-y-5 ">
             {courseLearningObj?.map((item, index) => (
               <li key={index}>{item}</li>
             ))}
-          </div>
+          </ul>
         </div>
       </div>
 
-      <div className="space-y-6  sm:w-3/5">
+      <div className="space-x-6 sm:w-3/5 border-2 border-solid border-[#FF2883] px-3   my-12 py-3">
         <div>
-          <p className="font-bold text-base"> Requirements </p>
-          <ul className="list-disc px-6 text-sm space-y-2">
+          <p className="font-bold text-base"> Prerequisites </p>
+          <ul className="list-disc text-sm  p-5 space-y-5">
             {coursePrerequisites?.map((item, index) => (
               <li key={index}>{item}</li>
             ))}
           </ul>
         </div>
-
-        <div className=" sm:w-3/5">
+      </div>
+      <div className="space-x-6 sm:w-3/5 border-2 border-solid border-black px-3   my-12 py-3">
+        <div>
           <p className="font-bold text-base"> Target Audience </p>
-          <ul className="list-disc px-6 text-sm space-y-2">
+          <ul className="list-disc text-sm  p-5 space-y-5">
             {courseTargetAudience?.map((item, index) => (
               <li key={index}>{item}</li>
             ))}

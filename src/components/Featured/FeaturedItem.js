@@ -18,18 +18,22 @@ export default function FeaturedItem({ courses, param }) {
   //     : filteredCourses;
 
   return courses.length === 0 ? (
-    <div className="text-center text-bold text-lg sm:text-xl" > <h2>This course is empty </h2> </div>
+    <div className="text-center text-bold text-lg sm:text-xl">
+      {" "}
+      <h2>This course is empty </h2>{" "}
+    </div>
   ) : (
     courses.map((course, index) => (
       <Link key={index} href={`/courseDetail/${course.slug}`}>
         <FeaturedCard
-          img={course.image}
-          level={course.level}
-          courseTitle={course.name}
-          author={course.author}
-          price={course.price}
-          description={course.description}
-          category={course.category}
+          img={course?.image}
+          level={course?.level}
+          courseTitle={course?.name}
+          author={course?.author}
+          duration={course?.duration}
+          price={course?.price}
+          description={course?.description}
+          category={course?.category}
           placeholder="blur"
           blurDataURL="/spinner.svg"
         />

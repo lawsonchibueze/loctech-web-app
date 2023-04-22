@@ -36,7 +36,7 @@ const fetchCourseBySlug = async (slug) => {
 };
 
 // const fetchRelatedCoursesById = async (relatedCoursesId) => {
-//   const course = await prisma.course.findUnique({
+//   const course = await prisma.RelatedCourses.findUnique({
 //     where: {
 //       relatedCoursesId,
 //     },
@@ -76,7 +76,6 @@ export default async function page({ params }) {
     linkedin: filteredInstructor[0]?.linkedin,
   };
 
-  console.log("=========", course?.curriculumList);
   return (
     <div>
       <CourseDetailHero
@@ -85,7 +84,6 @@ export default async function page({ params }) {
         coursePrice={course?.price}
         courseCategory={course?.category}
         courseImage={course?.image}
-        courseInstructor={courseInstructor}
         courseMethod={course?.isOnline}
       />
       <CourseDescription
@@ -97,9 +95,10 @@ export default async function page({ params }) {
       <Curriculum
         courseCurriculum={course?.curriculumList}
         curriculum={course?.curriculum}
+        duration={course?.duration}
       />
       {/* <InstructorCard /> */}
-      <RatingCard />
+      <RatingCard courseInstructor={courseInstructor} />
       {/* <Reviews /> */}
     </div>
   );

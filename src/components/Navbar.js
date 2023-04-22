@@ -93,6 +93,8 @@ export default function Navbar() {
                 <NavItem to="" name="Courses" />
 
                 <NavItem to="/about-us" name="About us" />
+                <NavItem to="/online-courses" name="Online" />
+                <NavItem to="/offline-courses" name="Classroom" />
                 {/* <NavItem to="" name="Library" /> */}
                 <NavItem to="/instructors" name="Instructors" />
                 {/* <NavItem to="" name="Gallery" /> */}
@@ -115,7 +117,8 @@ export default function Navbar() {
             </div>
             <NavItem to="/" name="Home" />
             <NavItem to="" name="Courses" />
-
+            <NavItem to="/online-courses" name="Online" />
+            <NavItem to="/offline-courses" name="Classroom" />
             <NavItem to="/about-us" name="About us" />
             {/* <NavItem to="" name="Library" /> */}
             <NavItem to="/instructors" name="Instructors" />
