@@ -33,6 +33,8 @@ model Course {
   createdAt        DateTime       @default(now())
   updatedAt        DateTime
   published        Boolean        @default(false)
+  courseCategoryId String
+  CourseCategory   CourseCategory @relation(fields: [courseCategoryId], references: [id])
   instructorId     String
   Instructor       Instructor     @relation(fields: [instructorId], references: [id])
   relatedCoursesId String
@@ -112,6 +114,7 @@ model CourseCategory {
   description String?
   createdAt   DateTime @default(now())
   updatedAt   DateTime
+  Course      Course[]
 }
 
 model About {
@@ -121,7 +124,7 @@ model About {
   coverImage String
   image1     String
   image2     String
-  image3     String
+  image3     String?
   content    String
   mission    String
   vision     String
@@ -169,6 +172,16 @@ model Comment {
   name      String
   email     String
   comment   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime
+}
+
+model Contact {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  subject   String
+  message   String
   createdAt DateTime @default(now())
   updatedAt DateTime
 }
