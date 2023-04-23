@@ -1,6 +1,7 @@
 import React from "react";
 import { PrismaClient } from "@prisma/client";
 import FeaturedItem from "@/components/Featured/FeaturedItem";
+import { useSearchParams } from "next/navigation";
 
 const prisma = new PrismaClient();
 
