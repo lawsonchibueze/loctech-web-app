@@ -11,7 +11,7 @@ datasource db {
 }
 
 model Course {
-  id               String          @id @default(cuid())
+  id               String         @id @default(cuid())
   name             String
   description      String
   image            String
@@ -22,23 +22,21 @@ model Course {
   learningObj      String[]
   targetAud        String[]
   prerequisites    String[]
-  slug             String          @unique
-  isFeatured       Boolean         @default(false)
-  isOnline         Boolean         @default(false)
-  isTrending       Boolean         @default(false)
+  slug             String         @unique
+  isFeatured       Boolean        @default(false)
+  isOnline         Boolean        @default(false)
+  isTrending       Boolean        @default(false)
   curriculum       String?
   curriculumList   String[]
   metaTitle        String?
   metaDesc         String?
-  createdAt        DateTime        @default(now())
+  createdAt        DateTime       @default(now())
   updatedAt        DateTime
-  published        Boolean         @default(false)
+  published        Boolean        @default(false)
   instructorId     String
-  Instructor       Instructor      @relation(fields: [instructorId], references: [id])
+  Instructor       Instructor     @relation(fields: [instructorId], references: [id])
   relatedCoursesId String
-  RelatedCourses   RelatedCourses  @relation(fields: [relatedCoursesId], references: [id])
-  CourseCategory   CourseCategory? @relation(fields: [courseCategoryId], references: [id])
-  courseCategoryId String?
+  RelatedCourses   RelatedCourses @relation(fields: [relatedCoursesId], references: [id])
 }
 
 model RelatedCourses {
@@ -106,16 +104,15 @@ enum CATEGORY {
   NETWORKING
 }
 
-model CourseCategory {
-  id          String   @id @default(cuid())
-  name        String
-  slug        String   @unique
-  image       String
-  description String?
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime
-  Course      Course[]
-}
+// model CourseCategory {
+//   id          String   @id @default(cuid())
+//   name        String
+//   slug        String   @unique
+//   image       String
+//   description String?
+//   createdAt   DateTime @default(now())
+//   updatedAt   DateTime
+// }
 
 model About {
   id         String   @id @default(cuid())
