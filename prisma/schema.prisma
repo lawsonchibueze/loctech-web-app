@@ -33,8 +33,6 @@ model Course {
   createdAt        DateTime        @default(now())
   updatedAt        DateTime
   published        Boolean         @default(false)
-  // courseCategoryId String
-  // CourseCategory   CourseCategory @relation(fields: [courseCategoryId], references: [id])
   instructorId     String
   Instructor       Instructor      @relation(fields: [instructorId], references: [id])
   relatedCoursesId String
@@ -116,7 +114,6 @@ model CourseCategory {
   description String?
   createdAt   DateTime @default(now())
   updatedAt   DateTime
-  // Course      Course[]
   Course      Course[]
 }
 
