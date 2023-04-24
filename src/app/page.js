@@ -23,15 +23,15 @@ const fetchHero = async () => {
 };
 
 //Course category function
-const fetchCourseCategory = async () => {
-  const category = await prisma.CourseCategory.findMany();
-  return category;
-};
+// const fetchCourseCategory = async () => {
+//   const category = await prisma.CourseCategory.findMany();
+//   return category;
+// };
 
 export default async function Home({ searchParams }) {
   const courses = await fetchCourse();
   const hero = await fetchHero();
-  const category = await fetchCourseCategory();
+  // const category = await fetchCourseCategory();
 
   const featuredCourses = courses.filter(
     (course) => course.isFeatured === true
