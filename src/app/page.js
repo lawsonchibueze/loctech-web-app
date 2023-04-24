@@ -17,29 +17,14 @@ const fetchCourse = async () => {
   return courses;
 };
 
-const fetchRelatedCourses = async (id) => {
-  const relatedCourses = await prisma.relatedCourses.findMany();
-  console.log(relatedCourses);
-  return relatedCourses;
-};
-
 const fetchHero = async () => {
   const hero = await prisma.hero.findMany();
   return hero;
 };
 
-//Course category function
-const fetchCourseCategory = async () => {
-  const category = await prisma.CourseCategory.findMany();
-  return category;
-};
-
 export default async function Home({ searchParams }) {
   const courses = await fetchCourse();
   const hero = await fetchHero();
-  const category = await fetchCourseCategory();
-  const relatedCourses = await fetchRelatedCourses();
-  console.log(relatedCourses);
 
   const featuredCourses = courses.filter(
     (course) => course.isFeatured === true
@@ -75,43 +60,42 @@ export default async function Home({ searchParams }) {
       </div>
       <FeaturedHeader title="Explore Featured Courses " categories />
       <div className=" gap-4 mx-3 sm:grid sm:grid-cols-2 sm:gap-x-8 sm:mx-20 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5   py-4 ">
-        <FeaturedItem courses={featuredCourses} param={searchParams} />
+        <FeaturedItem courses={featuredCourses} />
       </div>
 
       <Timer />
 
       <FeaturedHeader title="Browse Subjects " btnName="View all Courses" />
-
       <div className=" gap-4 mx-3 sm:grid sm:grid-cols-2 sm:gap-x-8 sm:mx-20 lg:grid-cols-4 xl:grid-cols-4 2xl:grid-cols-4   py-4 ">
         <SubjectCard
-          title={category[1]?.name}
+          title="Software Engineering"
           img="/category/softwareEngineer.jpg"
           param="coding"
         />
         <SubjectCard
-          title={category[3]?.name}
+          title="Computer Aided Design - Graphics"
           img="/category/DesignSpecialist.jpg"
           param="graphics_media"
         />
         <SubjectCard
-          title={category[5]?.name}
+          title="Network Security"
           img="/category/Networking.jpg"
           param="networking"
         />
         <SubjectCard
-          title={category[4]?.name}
+          title="Office Productivity"
           img="/category/officeProductivity.jpg"
           param="office_productivity"
         />
 
         <SubjectCard
-          title={category[2]?.name}
+          title="Data Science"
           img="/category/DataScientist.jpg"
           param="data_science"
         />
 
         <SubjectCard
-          title={category[0]?.name}
+          title="Cloud Computing"
           img="/category/cloudComputing.jpg"
           param="cloud_computing"
         />

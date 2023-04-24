@@ -3,7 +3,7 @@ import React from "react";
 import FeaturedCard from "./FeaturedCard";
 import Link from "next/link";
 
-export default function FeaturedItem({ courses, param }) {
+export default function FeaturedItem({ courses }) {
   // console.log("=====", param.category);
 
   // const filteredCourses = courses.filter(
