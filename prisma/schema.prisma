@@ -41,8 +41,8 @@ model Course {
 
 model RelatedCourses {
   id          String   @id @default(cuid())
-  image       String
-  description String
+  image       String?
+  description String?
   name        String?
   category    CATEGORY
   course      Course[]
