@@ -23,20 +23,19 @@ const fetchHero = async () => {
 };
 
 //Course category function
-const fetchCourseCategory = async () => {
-  const category = await prisma.CourseCategory.findMany();
-  return category;
-};
+// const fetchCourseCategory = async () => {
+//   const category = await prisma.CourseCategory.findMany();
+//   return category;
+// };
 
 export default async function Home({ searchParams }) {
   const courses = await fetchCourse();
   const hero = await fetchHero();
-  const category = await fetchCourseCategory();
+  // const category = await fetchCourseCategory();
 
   const featuredCourses = courses.filter(
     (course) => course.isFeatured === true
   ); //filter featured courses
-
 
   return (
     <div>
@@ -74,37 +73,36 @@ export default async function Home({ searchParams }) {
       <Timer />
 
       <FeaturedHeader title="Browse Subjects " btnName="View all Courses" />
-
       <div className=" gap-4 mx-3 sm:grid sm:grid-cols-2 sm:gap-x-8 sm:mx-20 lg:grid-cols-4 xl:grid-cols-4 2xl:grid-cols-4   py-4 ">
         <SubjectCard
-          title={category[1]?.name}
+          title="Software Engineering"
           img="/category/softwareEngineer.jpg"
           param="coding"
         />
         <SubjectCard
-          title={category[3]?.name}
+          title="Computer Aided Design - Graphics"
           img="/category/DesignSpecialist.jpg"
           param="graphics_media"
         />
         <SubjectCard
-          title={category[5]?.name}
+          title="Network Security"
           img="/category/Networking.jpg"
           param="networking"
         />
         <SubjectCard
-          title={category[4]?.name}
+          title="Office Productivity"
           img="/category/officeProductivity.jpg"
           param="office_productivity"
         />
 
         <SubjectCard
-          title={category[2]?.name}
+          title="Data Science"
           img="/category/DataScientist.jpg"
           param="data_science"
         />
 
         <SubjectCard
-          title={category[0]?.name}
+          title="Cloud Computing"
           img="/category/cloudComputing.jpg"
           param="cloud_computing"
         />
