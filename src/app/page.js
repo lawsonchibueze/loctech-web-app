@@ -22,16 +22,9 @@ const fetchHero = async () => {
   return hero;
 };
 
-//Course category function
-// const fetchCourseCategory = async () => {
-//   const category = await prisma.CourseCategory.findMany();
-//   return category;
-// };
-
 export default async function Home({ searchParams }) {
   const courses = await fetchCourse();
   const hero = await fetchHero();
-  // const category = await fetchCourseCategory();
 
   const featuredCourses = courses.filter(
     (course) => course.isFeatured === true
@@ -67,7 +60,7 @@ export default async function Home({ searchParams }) {
       </div>
       <FeaturedHeader title="Explore Featured Courses " categories />
       <div className=" gap-4 mx-3 sm:grid sm:grid-cols-2 sm:gap-x-8 sm:mx-20 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5   py-4 ">
-        <FeaturedItem courses={featuredCourses} param={searchParams} />
+        <FeaturedItem courses={featuredCourses} />
       </div>
 
       <Timer />

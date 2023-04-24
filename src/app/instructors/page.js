@@ -26,7 +26,7 @@ const FetchInstructorPage = async () => {
               name={instructor?.name}
               image={instructor?.image}
               rating={instructor?.rating}
-              bio= {instructor?.bio}
+              bio={instructor?.bio}
             />
           );
         })}

@@ -40,7 +40,8 @@ model Course {
 }
 
 model RelatedCourses {
-  id        String   @id @default(cuid())
+  id String @id @default(cuid())
+
   name      String?
   category  CATEGORY
   course    Course[]
@@ -104,15 +105,15 @@ enum CATEGORY {
   NETWORKING
 }
 
-// model CourseCategory {
-//   id          String   @id @default(cuid())
-//   name        String
-//   slug        String   @unique
-//   image       String
-//   description String?
-//   createdAt   DateTime @default(now())
-//   updatedAt   DateTime
-// }
+model CourseCategory {
+  id          String   @id @default(cuid())
+  name        String
+  slug        String   @unique
+  image       String
+  description String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime
+}
 
 model About {
   id         String   @id @default(cuid())
