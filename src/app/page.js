@@ -17,6 +17,12 @@ const fetchCourse = async () => {
   return courses;
 };
 
+const fetchRelatedCourses = async (id) => {
+  const relatedCourses = await prisma.relatedCourses.findMany();
+  console.log(relatedCourses);
+  return relatedCourses;
+};
+
 const fetchHero = async () => {
   const hero = await prisma.hero.findMany();
   return hero;
@@ -32,11 +38,12 @@ export default async function Home({ searchParams }) {
   const courses = await fetchCourse();
   const hero = await fetchHero();
   const category = await fetchCourseCategory();
+  const relatedCourses = await fetchRelatedCourses();
+  console.log(relatedCourses);
 
   const featuredCourses = courses.filter(
     (course) => course.isFeatured === true
   ); //filter featured courses
-
 
   return (
     <div>
