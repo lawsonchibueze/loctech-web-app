@@ -7,6 +7,9 @@ import Timer from "@/components/Timer";
 import SubjectCard from "@/components/Subjects/SubjectCard";
 import NewsletterCard from "@/components/NewsletterCard";
 import { PrismaClient } from "@prisma/client";
+import Link from "next/link";
+import Image from "next/image";
+import Filter from "@/components/Filter";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -100,6 +103,7 @@ export default async function Home({ searchParams }) {
           param="cloud_computing"
         />
       </div>
+      <Filter />
       {/* <FeaturedHeader title="Loctech Partners " btnName="View all" /> */}
       {/* <Partners /> */}
       <NewsletterCard />

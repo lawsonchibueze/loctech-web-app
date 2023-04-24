@@ -4,12 +4,6 @@ import FeaturedItem from "@/components/Featured/FeaturedItem";
 
 const prisma = new PrismaClient();
 
-// const fetchRelatedCourses = async () => {
-//   const courses = await prisma.relatedCourses.findMany()
-
-//   return courses;
-// };
-
 const fetchCourse = async (category) => {
   const courses = await prisma.course.findMany({
     where: {
@@ -22,8 +16,10 @@ const fetchCourse = async (category) => {
 export default async function page({ searchParams }) {
   const category = searchParams?.category?.toUpperCase();
   const categorizedCourses = await fetchCourse(category);
+  // const relatedCourses = await fetchRelatedCourses();
 
-  console.log(category)
+  console.log(category);
+  // console.log(relatedCourses);
 
   return (
     <div className=" gap-4 mx-3 sm:grid sm:grid-cols-2 sm:gap-x-8 sm:mx-20 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5   py-4 ">
