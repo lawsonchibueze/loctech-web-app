@@ -10,10 +10,25 @@ import { PrismaClient } from "@prisma/client";
 import Link from "next/link";
 import Image from "next/image";
 import Filter from "@/components/Filter";
+import { useRouter } from "next/navigation";
 
 const inter = Inter({ subsets: ["latin"] });
 
 const prisma = new PrismaClient();
+
+const fetchRelatedCourses = async () => {
+  const prisma = new PrismaClient();
+  const router = useRouter();
+  const coursescag = await prisma.course.findMany({
+    where: {
+      category: "DATA_SCIENCE",
+    },
+  });
+  router.push("/courses?category=DATA_SCIENCE");
+  console.log(coursescag);
+
+  return coursescag;
+};
 
 const fetchCourse = async () => {
   const courses = await prisma.course.findMany();
@@ -103,7 +118,7 @@ export default async function Home({ searchParams }) {
           param="cloud_computing"
         />
       </div>
-      <Filter />
+      {/* <Filter nav={fetchRelatedCourses} /> */}
       {/* <FeaturedHeader title="Loctech Partners " btnName="View all" /> */}
       {/* <Partners /> */}
       <NewsletterCard />

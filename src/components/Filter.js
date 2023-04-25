@@ -1,18 +1,10 @@
-"use client";
-import { PrismaClient } from "@prisma/client";
 import Link from "next/link";
 import Image from "next/image";
 
-const fetchRelatedCourses = async () => {
-  const coursescag = await prisma.course.findMany({});
-
-  return coursescag;
-};
-
-const Filter = () => {
+const Filter = ({ fetchRelatedCourses }) => {
   return (
     <div>
-      <Link href="/courses?category=DATA_SCIENCE">
+      <Link href={`/courses?${fetchRelatedCourses}`}>
         <Image
           src="/category/DataScientist.jpg"
           alt="data science"
