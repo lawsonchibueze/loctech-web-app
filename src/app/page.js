@@ -9,26 +9,25 @@ import NewsletterCard from "@/components/NewsletterCard";
 import { PrismaClient } from "@prisma/client";
 import Link from "next/link";
 import Image from "next/image";
-import Filter from "@/components/Filter";
-import { useRouter } from "next/navigation";
+//
 
 const inter = Inter({ subsets: ["latin"] });
 
 const prisma = new PrismaClient();
 
-const fetchRelatedCourses = async () => {
-  const prisma = new PrismaClient();
-  const router = useRouter();
-  const coursescag = await prisma.course.findMany({
-    where: {
-      category: "DATA_SCIENCE",
-    },
-  });
-  router.push("/courses?category=DATA_SCIENCE");
-  console.log(coursescag);
+// const fetchRelatedCourses = async () => {
+//   const prisma = new PrismaClient();
+//   const router = useRouter();
+//   const coursescag = await prisma.course.findMany({
+//     where: {
+//       category: "DATA_SCIENCE",
+//     },
+//   });
+//   router.push("/courses?category=DATA_SCIENCE");
+//   console.log(coursescag);
 
-  return coursescag;
-};
+//   return coursescag;
+// };
 
 const fetchCourse = async () => {
   const courses = await prisma.course.findMany();
