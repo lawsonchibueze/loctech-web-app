@@ -15,20 +15,6 @@ const inter = Inter({ subsets: ["latin"] });
 
 const prisma = new PrismaClient();
 
-// const fetchRelatedCourses = async () => {
-//   const prisma = new PrismaClient();
-//   const router = useRouter();
-//   const coursescag = await prisma.course.findMany({
-//     where: {
-//       category: "DATA_SCIENCE",
-//     },
-//   });
-//   router.push("/courses?category=DATA_SCIENCE");
-//   console.log(coursescag);
-
-//   return coursescag;
-// };
-
 const fetchCourse = async () => {
   const courses = await prisma.course.findMany();
   return courses;
