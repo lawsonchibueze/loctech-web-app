@@ -38,7 +38,7 @@ export default function FeaturedCard({
       </div>
       <div className="flex justify-between">
         <p className="font-bold">N{formatPrice(price)}</p>
-        <p className="text-sm font-medium">{duration}wks</p>
+        <p className="text-sm font-medium">{duration}weeks</p>
       </div>
     </div>
   );
