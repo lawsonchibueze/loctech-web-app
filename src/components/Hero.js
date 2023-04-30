@@ -9,7 +9,7 @@ export default function Hero({ image, title, subtitle, button }) {
 
         <p className="text-lg sm:text-2xl font-light	">{subtitle}</p>
         <div>
-          <Link href="/courses">
+          <Link href="/online-courses">
             <button className="py-4 px-10 my-4 bg-[#FF2883] sm:text-xl font-medium rounded-md text-white cursor-pointer">
               {button}
             </button>
