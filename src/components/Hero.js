@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 export default function Hero({ image, title, subtitle, button }) {
   return (
     <div className="px-3 py-8 bg-[#EEF0F4]  dark:bg-gray-700 dark:text-white flex flex-col-reverse   sm:px-20  sm:flex-row sm:items-center ">
@@ -8,9 +9,11 @@ export default function Hero({ image, title, subtitle, button }) {
 
         <p className="text-lg sm:text-2xl font-light	">{subtitle}</p>
         <div>
-          <button className="py-4 px-10 my-4 bg-[#FF2883] sm:text-xl font-medium rounded-md text-white cursor-pointer">
-            {button}
-          </button>
+          <Link href="/courses">
+            <button className="py-4 px-10 my-4 bg-[#FF2883] sm:text-xl font-medium rounded-md text-white cursor-pointer">
+              {button}
+            </button>
+          </Link>
         </div>
       </div>
 
