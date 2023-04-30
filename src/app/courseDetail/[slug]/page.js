@@ -35,20 +35,6 @@ const fetchCourseBySlug = async (slug) => {
   return course;
 };
 
-// const fetchRelatedCoursesById = async (relatedCoursesId) => {
-//   const course = await prisma.RelatedCourses.findUnique({
-//     where: {
-//       relatedCoursesId,
-//     },
-//   });
-
-//   if (!course) {
-//     return null;
-//   }
-
-//   return course;
-// };
-
 export default async function page({ params }) {
   const { slug, instructorId } = params;
   const course = await fetchCourseBySlug(slug);

@@ -9,7 +9,7 @@ export default function Curriculum({ courseCurriculum, curriculum, duration }) {
         <div className="flex items-center justify-between my-4">
           <h2 className="font-semibold text-base  sm:text-lg">Curriculum </h2>
           <div className="flex items-center justify-between space-x-8">
-            <p className="text-xs text-gray-500">{duration}wks</p>
+            <p className="text-xs text-gray-500">{duration}weeks</p>
           </div>
         </div>
         <div className="border-2 border-solid border-gray-300  sm:my-8">
