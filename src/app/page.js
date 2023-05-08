@@ -49,16 +49,17 @@ export default async function Home({ searchParams }) {
       })}
       <div className=" gap-4 mx-3 sm:grid sm:grid-cols-2 sm:gap-x-8 sm:mx-20 lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-2   py-4 ">
         <Card
-          image="/black-woman-in-modern-office-speeking-on-phone-PHV96YW (1).png"
-          title="Online Courses from Loctech IT Training Institute"
-          btnName="Find Out More"
-          to="/online-courses"
-        />
-        <Card
           image="/black-student-boy-preparing-research-LKD6ZMJ.png"
-          title="Master Your Coding Skills in Your Space"
+          title="Visit our classroom courses"
           btnName="View More Courses"
           to="/offline-courses"
+        />
+
+        <Card
+          image="/black-woman-in-modern-office-speeking-on-phone-PHV96YW (1).png"
+          title="Visit our online courses"
+          btnName="Find Out More"
+          to="/online-courses"
         />
       </div>
       <FeaturedHeader title="Explore Featured Courses " categories />

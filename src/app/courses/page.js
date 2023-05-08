@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic"; // this is the fix
+
 import React from "react";
 import { PrismaClient } from "@prisma/client";
 import FeaturedItem from "@/components/Featured/FeaturedItem";
