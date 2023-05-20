@@ -1,16 +1,15 @@
-import AboutUsHero from "@/components/AboutUsHero";
-import AboutUsService from "@/components/AboutUsService";
-import History from "@/components/History";
-import ServiceCard from "@/components/ServiceCard";
-import React from "react";
+// import AboutUsHero from "@/components/AboutUsHero";
+// import AboutUsService from "@/components/AboutUsService";
+// import History from "@/components/History";
+// import ServiceCard from "@/components/ServiceCard";
 
 export default function page() {
   return (
     <div>
-      <main class="container mx-auto px-4 py-8">
-        <section class="mt-8">
-          <h2 class=" font-bold mb-4">About Loctech</h2>
-          <p class="text-gray-700 leading-relaxed mb-4">
+      <main className="container mx-auto px-4 py-8">
+        <section className="mt-8">
+          <h2 className=" font-bold mb-4">About Loctech</h2>
+          <p className="text-gray-700 leading-relaxed mb-4">
             Welcome to Loctech, a leading IT Training Institute specializing in
             software development, data science, Microsoft Office, Cisco, Cyber
             Security and project management. At Loctech, we are committed to
@@ -18,8 +17,8 @@ export default function page() {
             skills necessary to excel in the ever-evolving field of information
             technology.
           </p>
-          <h2 class=" font-bold mb-4">Our Vision</h2>
-          <p class="text-gray-700 mb-4 leading-relaxed">
+          <h2 className=" font-bold mb-4">Our Vision</h2>
+          <p className="text-gray-700 mb-4 leading-relaxed">
             Our vision is to be the premier destination for individuals and
             professionals seeking top-notch IT training. We strive to create an
             environment that fosters continuous learning, innovation, and
@@ -27,8 +26,8 @@ export default function page() {
             hands-on experience, we aim to equip our students with the tools
             they need to succeed in today's competitive IT landscape.
           </p>
-          <h2 class=" font-bold mb-4">Our Expertise</h2>
-          <p class="text-gray-700 mb-4 leading-relaxed">
+          <h2 className=" font-bold mb-4">Our Expertise</h2>
+          <p className="text-gray-700 mb-4 leading-relaxed">
             Loctech stands out among IT training institutes due to our
             exceptional expertise in various technology domains. We offer
             comprehensive training programs in software development, where
@@ -48,8 +47,8 @@ export default function page() {
             to effectively plan, execute, and manage projects of varying scales
             and complexities.
           </p>
-          <h2 class=" font-bold mb-4">Our Approach</h2>
-          <p class="text-gray-700  leading-relaxed mb-4">
+          <h2 className=" font-bold mb-4">Our Approach</h2>
+          <p className="text-gray-700  leading-relaxed mb-4">
             At Loctech, we believe in a hands-on and practical approach to
             learning. Our experienced instructors are industry professionals
             with a wealth of knowledge and real-world experience. They are
@@ -61,9 +60,9 @@ export default function page() {
           </p>
         </section>
 
-        <section class="mt-8">
-          <h2 class=" font-bold mb-4">Our Specializations</h2>
-          <ul class="list-disc list-inside text-gray-700 mb-4 leading-relaxed">
+        <section className="mt-8">
+          <h2 className=" font-bold mb-4">Our Specializations</h2>
+          <ul className="list-disc list-inside text-gray-700 mb-4 leading-relaxed">
             <li>
               Comprehensive Curriculum: Our training programs are carefully
               designed to cover all essential aspects of the respective domains,
@@ -92,8 +91,8 @@ export default function page() {
             </li>
           </ul>
 
-          <h2 class=" font-bold mb-4">Join Loctech Today!</h2>
-          <p class="text-gray-700 leading-relaxed mb-4">
+          <h2 className=" font-bold mb-4">Join Loctech Today!</h2>
+          <p className="text-gray-700 leading-relaxed mb-4">
             Whether you are a beginner looking to start a career in IT or a
             professional seeking to enhance your skills, Loctech is here to
             guide you on your learning journey. Discover the endless
