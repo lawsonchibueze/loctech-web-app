@@ -8,7 +8,7 @@ export default function page() {
     <div>
       <main className="container mx-auto px-4 py-8">
         <section className="mt-8">
-          <h2 className=" font-bold mb-4">About Loctech</h2>
+          <h2 className=" font-bold mb-4 text-rose-500">About Loctech</h2>
           <p className="text-gray-700 leading-relaxed mb-4">
             Welcome to Loctech, a leading IT Training Institute specializing in
             software development, data science, Microsoft Office, Cisco, Cyber
@@ -17,7 +17,7 @@ export default function page() {
             skills necessary to excel in the ever-evolving field of information
             technology.
           </p>
-          <h2 className=" font-bold mb-4">Our Vision</h2>
+          <h2 className=" font-bold mb-4 text-rose-500">Our Vision</h2>
           <p className="text-gray-700 mb-4 leading-relaxed">
             Our vision is to be the premier destination for individuals and
             professionals seeking top-notch IT training. We strive to create an
@@ -26,7 +26,7 @@ export default function page() {
             hands-on experience, we aim to equip our students with the tools
             they need to succeed in today's competitive IT landscape.
           </p>
-          <h2 className=" font-bold mb-4">Our Expertise</h2>
+          <h2 className=" font-bold mb-4 text-rose-500">Our Expertise</h2>
           <p className="text-gray-700 mb-4 leading-relaxed">
             Loctech stands out among IT training institutes due to our
             exceptional expertise in various technology domains. We offer
@@ -47,7 +47,7 @@ export default function page() {
             to effectively plan, execute, and manage projects of varying scales
             and complexities.
           </p>
-          <h2 className=" font-bold mb-4">Our Approach</h2>
+          <h2 className=" font-bold mb-4 text-rose-500">Our Approach</h2>
           <p className="text-gray-700  leading-relaxed mb-4">
             At Loctech, we believe in a hands-on and practical approach to
             learning. Our experienced instructors are industry professionals
@@ -61,7 +61,7 @@ export default function page() {
         </section>
 
         <section className="mt-8">
-          <h2 className=" font-bold mb-4">Our Specializations</h2>
+          <h2 className=" font-bold mb-4 text-rose-500">Our Specializations</h2>
           <ul className="list-disc list-inside text-gray-700 mb-4 leading-relaxed">
             <li>
               Comprehensive Curriculum: Our training programs are carefully
@@ -91,7 +91,7 @@ export default function page() {
             </li>
           </ul>
 
-          <h2 className=" font-bold mb-4">Join Loctech Today!</h2>
+          <h2 className=" font-bold mb-4 text-rose-500">Join Loctech Today!</h2>
           <p className="text-gray-700 leading-relaxed mb-4">
             Whether you are a beginner looking to start a career in IT or a
             professional seeking to enhance your skills, Loctech is here to
